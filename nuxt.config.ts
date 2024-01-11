@@ -1,10 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: [
-    "~/assets/styles.css",
-    "@mdi/font/css/materialdesignicons.min.css",
-  ],
+  css: ["~/assets/styles.css", "@mdi/font/css/materialdesignicons.min.css"],
   nitro: { preset: "netlify-edge" },
 
   modules: [
@@ -21,7 +18,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      titleTemplate: "BARBIN CPS PLOMBERIE CHAUFFAGE - %s",
+      titleTemplate: "BARBIN Chauffage Plomberie Sanitaire - %s",
       htmlAttrs: {
         lang: "fr",
       },
