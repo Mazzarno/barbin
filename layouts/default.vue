@@ -3,7 +3,7 @@
     <!-- NAVBAR -->
     <nav
       :class="{ 'hidden-navbar': !showNavbar }"
-      class="navbar inset-x-0 top-0 fixed z-40 bg-white opacity-95 w-full rounded-b-lg shadow-2xl"
+      class="navbar inset-x-0 top-0 fixed z-40 bg-white bg-opacity-40 backdrop-blur-xl rounded-b-xl drop-shadow-4xl shadow-2xl w-full"
     >
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -17,7 +17,7 @@
           <NuxtImg
             loading="lazy"
             src="/logo_nav.svg"
-            class="transition delay-100 hover:scale-105 duration-300 h-20 ml-5"
+            class="transition delay-100 hover:scale-105 duration-300 h-16 ml-5"
             alt="BARBIN C.P.S logo"
           />
         </NuxtLink>
@@ -25,7 +25,7 @@
           <li>
             <NuxtLink to="/" aria-label="Chauffage" title="Chauffage">
               <h1
-                class="link-btn text-xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors  hover:text-[#03045E]  delay-100 hover:scale-105 duration-300"
+                class="link-btn text-xl mt-3 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
                 Chauffage
               </h1>
@@ -34,7 +34,7 @@
           <li>
             <NuxtLink href="/" aria-label="Plomberie" title="Plomberie">
               <h1
-                class="link-btn text-xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors  hover:text-[#03045E] delay-100 hover:scale-105 duration-300"
+                class="link-btn text-xl mt-3 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
                 Plomberie
               </h1>
@@ -43,7 +43,7 @@
           <li>
             <NuxtLink to="/" aria-label="Sanitaire" title="Sanitaire">
               <h1
-                class="link-btn text-xl p-4 mt-6 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors  hover:text-[#03045E]  delay-100 hover:scale-105 duration-300"
+                class="link-btn text-xl p-4 mt-3 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
                 Sanitaire
               </h1>
@@ -53,7 +53,7 @@
             <h1
               @click="contact()"
               :class="{ hidden: showContact }"
-              class="link-btn text-xl p-4 mt-6 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors  hover:text-[#03045E]  delay-100 hover:scale-105 duration-300"
+              class="link-btn text-xl p-4 mt-3 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
             >
               Contact
             </h1>
@@ -89,26 +89,10 @@
           <button
             aria-label="Ouvrir le menu mobile"
             title="Menu mobile"
-            class="rounded focus:outline-none focus:shadow-outline text-2xl p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors  hover:text-[#03045E]  delay-100 hover:scale-105 duration-300"
+            class="rounded focus:outline-none focus:shadow-outline text-2xl p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] delay-100 hover:scale-105 duration-300"
             @click="drawer()"
           >
-            <svg
-              class="w-10 font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              ></path>
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              ></path>
-            </svg>
+            <i class="mdi mdi-menu"></i>
           </button>
         </div>
       </div>
@@ -117,7 +101,7 @@
     <!-- DRAWER -->
     <aside
       :class="openDrawer ? 'drawer-open' : 'drawer-close'"
-      class="drawer w-80 z-50 fixed bg-white top-0 h-screen shadow-2xl"
+      class="drawer w-80 z-50 fixed bg-white bg-opacity-40 backdrop-blur-xl rounded-b-xl drop-shadow-4xl shadow-2xl top-0 h-screen"
     >
       <div class="flex pr-2 justify-end">
         <button
@@ -230,6 +214,13 @@
         </span>
       </div>
     </aside>
+    <!-- CTA -->
+    <div
+      class="z-40 rounded-full fixed bottom-1/4 right-1/2 p-12 bg-white bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-xl"
+    >
+      <i class="mdi mdi-phone-outline"></i>
+    </div>
+
     <main class="min-h-screen">
       <slot />
     </main>

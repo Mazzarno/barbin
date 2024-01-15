@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
+    "nuxt-swiper",
   ],
 
   site: {
