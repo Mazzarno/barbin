@@ -214,17 +214,123 @@
         </span>
       </div>
     </aside>
-    <!-- CTA -->
+    <!-- CTA 
     <div
       class="z-40 rounded-full fixed bottom-1/4 right-1/2 p-12 bg-white bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-xl"
     >
       <i class="mdi mdi-phone-outline"></i>
     </div>
-
+-->
     <main class="min-h-screen">
       <slot />
     </main>
     <!-- FOOTER -->
+    <footer
+      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+    >
+      <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="sm:col-span-2">
+          <NuxtLink
+            to="/"
+            aria-label="BARBIN C.P.S"
+            title="BARBIN C.P.S"
+            class="inline-flex items-center"
+          >
+            <NuxtImg
+              loading="lazy"
+              src="/logo_nav.svg"
+              class="transition delay-100 hover:scale-105 duration-300 h-16"
+              alt="BARBIN C.P.S logo"
+            />
+          </NuxtLink>
+          <div class="mt-6 lg:max-w-sm">
+            <p class="text-sm text-gray-800">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam.
+            </p>
+            <p class="mt-4 text-sm text-gray-800">
+              Eaque ipsa quae ab illo inventore veritatis et quasi architecto
+              beatae vitae dicta sunt explicabo.
+            </p>
+          </div>
+        </div>
+        <div class="space-y-2 text-sm">
+          <p class="text-base font-bold tracking-wide text-gray-900">
+            Contacts
+          </p>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Phone:</p>
+            <a
+              href="tel:850-123-5021"
+              aria-label="Our phone"
+              title="Our phone"
+              class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            >
+              850-123-5021
+            </a>
+          </div>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Email:</p>
+            <a
+              href="mailto:info@lorem.mail"
+              aria-label="Our email"
+              title="Our email"
+              class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            >
+              info@lorem.mail
+            </a>
+          </div>
+          <div class="flex">
+            <p class="mr-1 text-gray-800">Address:</p>
+            <a
+              href="https://www.google.com/maps"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Our address"
+              title="Our address"
+              class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            >
+              312 Lovely Street, NY
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row"
+      >
+        <p class="text-sm text-gray-600">
+          © Copyright 2020 Lorem Inc. All rights reserved.
+        </p>
+        <ul
+          class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"
+        >
+          <li>
+            <a
+              href="/"
+              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            >
+              Plan du Site
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            >
+              Politique de Confidentialité
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            >
+              Mentions Légales
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </div>
 </template>
 <script>
