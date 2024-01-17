@@ -14,6 +14,8 @@
           BARBIN CPS
           <br />
           Le spécialiste Chauffage Plomberie et Sanitaire
+          <br />
+          dans l'Oise et le Val d'Oise
         </h1>
       </div>
     </div>
@@ -59,7 +61,7 @@
     </div>
     <!-- CHAUFFAGE -->
     <div
-      class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="relative px-4 mt-16 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <div class="absolute inset-0">
         <div
@@ -72,13 +74,11 @@
         </h5>
       </div>
       <div class="relative pt-2">
-        <div class="grid gap-12 row-gap-8 lg:grid-cols-2 items-center">
-          <div class="grid gap-12 row-gap-5 md:grid-cols-2">
+        <div class="lg:gap-12 lg:row-gap-8 lg:grid lg:grid-cols-2 items-center">
+          <div class="lg:gap-12 lg:row-gap-5 lg:grid lg:grid-cols-2">
             <div class="relative">
               <div class="relative">
-                <div
-                  class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-                >
+                <div class="flex items-center justify-start mt-8">
                   <i
                     class="mdi mdi-water-boiler mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                   ></i>
@@ -98,9 +98,7 @@
               </div>
             </div>
             <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
+              <div class="flex items-center justify-start mt-8">
                 <i
                   class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 ></i>
@@ -119,9 +117,7 @@
               </p>
             </div>
             <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
+              <div class="flex justify-start mt-8 lg:mt-0">
                 <i
                   class="mdi mdi-tools mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 ></i>
@@ -140,9 +136,7 @@
               </p>
             </div>
             <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
+              <div class="flex items-center justify-start mt-8 lg:mt-0">
                 <i
                   class="mdi mdi-fire mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 ></i>
@@ -164,7 +158,7 @@
           </div>
           <div>
             <swiper
-              class="mySwiper"
+              class="mySwiper mt-8"
               :loop="true"
               :autoplay="{
                 delay: 3000,
@@ -180,7 +174,7 @@
                   rel="noopener noreferrer"
                 >
                   <NuxtImg
-                    class="object-cover w-full h-56 rounded shadow-lg sm:h-96"
+                    class="lg:object-cover w-full rounded shadow-lg h-96"
                     :src="chaudiere.img"
                     :alt="chaudiere.nom"
                   />
@@ -201,7 +195,7 @@
         Nos Certifications
       </h5>
 
-      <div class="mx-auto max-w-screen-2xl pt-8 sm:pt-16 px-4 lg:px-6">
+      <div class="mx-auto max-w-screen-2xl">
         <swiper
           class="swiper"
           :loop="false"
@@ -265,134 +259,73 @@
     </div>
     <!-- PLOMBERIE -->
     <div
-      class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
-      <div class="absolute inset-0">
-        <div
-          class="absolute inset-y-0 z-0 w-full h-full bg-gray-100 lg:w-3/4"
-        ></div>
+      <div class="grid gap-10 lg:grid-cols-2">
         <h5
-          class="p-8 absolute tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
+          class="py-4 absolute tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
         >
-          La Plomberie
+          Le Chauffage
         </h5>
-      </div>
-      <div class="relative pt-2">
-        <div class="grid gap-12 row-gap-8 lg:grid-cols-2 items-center">
-          <div class="grid gap-12 row-gap-5 md:grid-cols-2">
-            <div class="relative">
-              <div class="relative">
-                <div
-                  class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-                >
-                  <i
-                    class="mdi mdi-water-boiler mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                  ></i>
-                </div>
-                <h6
-                  class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                >
-                  Installation de chaudière
-                </h6>
-                <p class="text-sm text-gray-900">
-                  L'installation d'une chaudière neuve par BARBIN CPS vous
-                  garantit une efficacité énergétique optimale, réduisant ainsi
-                  les coûts de chauffage tout en minimisant l'impact
-                  environnemental. De plus, cela vous assure une installation
-                  sécurisée et conforme aux normes.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Entretien de chaudière
-              </h6>
-              <p class="text-sm text-gray-900">
-                Un entretien de chaudière régulier effectué par BARBIN CPS
-                prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-                coûteuses et assurant un fonctionnement fiable. De plus, cette
-                pratique permet d'optimiser l'efficacité énergétique, réduisant
-                les dépenses en énergie.
-              </p>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-tools mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Intervention d'urgence et réparation
-              </h6>
-              <p class="text-sm text-gray-900">
-                Les interventions de BARBIN CPS garantissent un rétablissement
-                rapide du chauffage, assurant ainsi le confort des occupants. De
-                plus, notre expertise garantit des solutions durables,
-                minimisant les risques de récidive des problèmes et assurant la
-                sécurité continue de l'installation.
-              </p>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-fire mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Expert Gaz/Fioul
-              </h6>
-              <p class="text-sm text-gray-900">
-                BARBIN CPS intervient sur un grand nombre de marques de
-                chaudière, assurant ainsi des solutions sur mesure pour
-                l'efficacité énergétique et le confort thermique. Cette
-                expertise diversifiée vous offre la possibilité de prendre des
-                décisions éclairées et d'optimiser le fonctionnement de votre
-                système de chauffage en fonction de vos préférences.
-              </p>
-            </div>
+        <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+          <div
+            class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400"
+          ></div>
+          <div class="max-w-xl mb-6">
+            <h2
+              class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
+            >
+              Let us handle
+              <br class="hidden md:block" />
+              your next
+              <span class="inline-block text-deep-purple-accent-400">
+                destination
+              </span>
+            </h2>
+            <p class="text-base text-gray-700 md:text-lg">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae. explicabo.
+            </p>
           </div>
           <div>
-            <swiper
-              class="mySwiper"
-              :loop="true"
-              :autoplay="{
-                delay: 3000,
-              }"
-              :pagination="false"
-              :grabCursor="false"
-              :modules="modules"
+            <a
+              href="/"
+              aria-label=""
+              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
-              <swiper-slide v-for="chaudiere in chaudieres" :key="chaudiere.id">
-                <a
-                  :href="chaudiere.lien"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <NuxtImg
-                    class="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-                    :src="chaudiere.img"
-                    :alt="chaudiere.nom"
-                  />
-                </a>
-              </swiper-slide>
-            </swiper>
+              Learn more
+              <svg
+                class="inline-block w-3 ml-2"
+                fill="currentColor"
+                viewBox="0 0 12 12"
+              >
+                <path
+                  d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex items-center justify-center -mx-4 lg:pl-8">
+          <div class="flex flex-col items-end px-3">
+            <img
+              class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+              src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              alt=""
+            />
+            <img
+              class="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              alt=""
+            />
+          </div>
+          <div class="px-3">
+            <img
+              class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+              src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -407,7 +340,7 @@
         Nos Partenaires
       </h5>
 
-      <div class="mx-auto max-w-screen-2xl pt-8 sm:pt-16 px-4 lg:px-6">
+      <div class="mx-auto max-w-screen-2xl">
         <swiper
           class="mySwiper"
           :loop="true"
@@ -470,141 +403,10 @@
       </div>
     </div>
     <!-- SANITAIRE -->
+
+    <!-- MAPS -->
     <div
-      class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-    >
-      <div class="absolute inset-0">
-        <div
-          class="absolute inset-y-0 z-0 w-full h-full bg-gray-100 lg:w-3/4"
-        ></div>
-        <h5
-          class="p-8 absolute tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
-        >
-          Le Sanitaire
-        </h5>
-      </div>
-      <div class="relative pt-2">
-        <div class="grid gap-12 row-gap-8 lg:grid-cols-2 items-center">
-          <div class="grid gap-12 row-gap-5 md:grid-cols-2">
-            <div class="relative">
-              <div class="relative">
-                <div
-                  class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-                >
-                  <i
-                    class="mdi mdi-water-boiler mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                  ></i>
-                </div>
-                <h6
-                  class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                >
-                  Installation de chaudière
-                </h6>
-                <p class="text-sm text-gray-900">
-                  L'installation d'une chaudière neuve par BARBIN CPS vous
-                  garantit une efficacité énergétique optimale, réduisant ainsi
-                  les coûts de chauffage tout en minimisant l'impact
-                  environnemental. De plus, cela vous assure une installation
-                  sécurisée et conforme aux normes.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Entretien de chaudière
-              </h6>
-              <p class="text-sm text-gray-900">
-                Un entretien de chaudière régulier effectué par BARBIN CPS
-                prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-                coûteuses et assurant un fonctionnement fiable. De plus, cette
-                pratique permet d'optimiser l'efficacité énergétique, réduisant
-                les dépenses en énergie.
-              </p>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-tools mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Intervention d'urgence et réparation
-              </h6>
-              <p class="text-sm text-gray-900">
-                Les interventions de BARBIN CPS garantissent un rétablissement
-                rapide du chauffage, assurant ainsi le confort des occupants. De
-                plus, notre expertise garantit des solutions durables,
-                minimisant les risques de récidive des problèmes et assurant la
-                sécurité continue de l'installation.
-              </p>
-            </div>
-            <div>
-              <div
-                class="flex items-center justify-center w-10 h-10 mb-3 rounded-full"
-              >
-                <i
-                  class="mdi mdi-fire mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-                ></i>
-              </div>
-              <h6
-                class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              >
-                Expert Gaz/Fioul
-              </h6>
-              <p class="text-sm text-gray-900">
-                BARBIN CPS intervient sur un grand nombre de marques de
-                chaudière, assurant ainsi des solutions sur mesure pour
-                l'efficacité énergétique et le confort thermique. Cette
-                expertise diversifiée vous offre la possibilité de prendre des
-                décisions éclairées et d'optimiser le fonctionnement de votre
-                système de chauffage en fonction de vos préférences.
-              </p>
-            </div>
-          </div>
-          <div>
-            <swiper
-              class="mySwiper"
-              :loop="true"
-              :autoplay="{
-                delay: 3000,
-              }"
-              :pagination="false"
-              :grabCursor="false"
-              :modules="modules"
-            >
-              <swiper-slide v-for="chaudiere in chaudieres" :key="chaudiere.id">
-                <a
-                  :href="chaudiere.lien"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <NuxtImg
-                    class="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-                    :src="chaudiere.img"
-                    :alt="chaudiere.nom"
-                  />
-                </a>
-              </swiper-slide>
-            </swiper>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 h"
     >
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
