@@ -47,6 +47,99 @@ html {
   font-weight: 500;
   src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 }
+/* ANIMATION LOGO  */
+#BARBINCPS {
+  animation: pulsate-bck 0.5s ease-in-out both;
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+#Flame {
+  animation: burn 0.5s linear infinite 1s both;
+}
+
+@keyframes burn {
+  0% {
+    transform: translate(0);
+    transform: skew(0deg, 0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-0.1px, 0.5px);
+    transform: skew(1deg, 0.5deg);
+  }
+  40% {
+    transform: translate(-0.1px, -0.5px);
+    transform: skew(-1deg, -0.5deg);
+  }
+  60% {
+    transform: translate(0.1px, 0.5px);
+    transform: skew(1deg, 0.5deg);
+    opacity: 0.6;
+  }
+  80% {
+    transform: translate(0.1px, -0.5px);
+    transform: skew(-2deg, -1deg);
+  }
+  100% {
+    transform: translate(0);
+    transform: skew(1deg, 0.5deg);
+    opacity: 1;
+  }
+}
+
+#Water {
+  opacity: 1;
+  animation: slide-out 4s linear 1s normal none;
+}
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(60%);
+    opacity: 1;
+  }
+}
+#WaterFlame {
+  opacity: 0;
+  animation: slide-in 4s linear 1s normal none;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+}
 /* SCROLL BAR 
 ::-webkit-scrollbar {
   width: 7px;
