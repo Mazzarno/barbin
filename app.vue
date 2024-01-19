@@ -1,5 +1,5 @@
 <template>
-  <div class="select-none">
+  <div>
     <!--<Loading v-if="loading" />-->
     <NuxtLayout>
       <NuxtPage />
