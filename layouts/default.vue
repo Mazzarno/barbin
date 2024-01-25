@@ -303,7 +303,7 @@
     </main>
     <!-- FOOTER -->
     <footer
-      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-t-xl drop-shadow-4xl shadow-2xl"
+      class="px-4 mt-10 pt-6 mx-auto sm:max-w-full md:max-w-full lg:max-w-screen-full md:px-24 lg:px-8 bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-t-xl drop-shadow-4xl shadow-2xl"
     >
       <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div class="sm:col-span-2">
@@ -345,7 +345,7 @@
         </div>
       </div>
       <div
-        class="flex flex-col-reverse justify-between pt-5 pb-5 border-t lg:flex-row"
+        class="flex flex-col-reverse justify-between pt-6 pb-6 border-t lg:flex-row"
       >
         <p class="text-sm text-gray-600">
           © Copyright 2020 Lorem Inc. All rights reserved.

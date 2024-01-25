@@ -2,9 +2,10 @@
   <div>
     <!-- HEADER / CONTACT I -->
     <section
-      class="w-full h-screen bg-fixed bg-cover bg-center flex justify-center items-center"
+      class="w-full h-screen bg-fixed bg-cover bg-center flex flex-col justify-around items-center"
       style="background-image: url(/img/salle_de_bain.jpg)"
     >
+      <div class=""></div>
       <div
         class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl text-center"
       >
@@ -18,6 +19,9 @@
           dans l'Oise et le Val d'Oise
         </h1>
       </div>
+      <div
+        class="mx-auto scroll self-end rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6"
+      ></div>
     </section>
     <!-- A PROPOS  -->
     <section
@@ -69,7 +73,7 @@
       <div class="relative">
         <div class="absolute inset-0">
           <div
-            class="absolute inset-y-0 z-0 w-full h-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl lg:w-3/4"
+            class="absolute inset-y-0 z-0 w-full h-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl lg:w-3/4"
           ></div>
         </div>
         <div class="relative p-5">
@@ -273,44 +277,82 @@
         La Plomberie
       </h5>
       <div class="grid gap-10 lg:grid-cols-2">
-        <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
-          <div
-            class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400"
-          ></div>
-          <div class="max-w-xl mb-6">
-            <h2
-              class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
+        <div class="lg:gap-12 lg:row-gap-5 lg:grid lg:grid-cols-2">
+          <div>
+            <div class="flex items-center justify-start">
+              <i
+                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+              ></i>
+            </div>
+            <h6
+              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
             >
-              Let us handle
-              <br class="hidden md:block" />
-              your next
-              <span class="inline-block text-deep-purple-accent-400">
-                destination
-              </span>
-            </h2>
-            <p class="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+              Entretien de chaudière
+            </h6>
+            <p class="text-sm text-gray-900">
+              Un entretien de chaudière régulier effectué par BARBIN CPS
+              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
+              coûteuses et assurant un fonctionnement fiable. De plus, cette
+              pratique permet d'optimiser l'efficacité énergétique, réduisant
+              les dépenses en énergie.
             </p>
           </div>
           <div>
-            <a
-              href="/"
-              aria-label=""
-              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+            <div class="flex items-center justify-start">
+              <i
+                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+              ></i>
+            </div>
+            <h6
+              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
             >
-              Learn more
-              <svg
-                class="inline-block w-3 ml-2"
-                fill="currentColor"
-                viewBox="0 0 12 12"
-              >
-                <path
-                  d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"
-                ></path>
-              </svg>
-            </a>
+              Entretien de chaudière
+            </h6>
+            <p class="text-sm text-gray-900">
+              Un entretien de chaudière régulier effectué par BARBIN CPS
+              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
+              coûteuses et assurant un fonctionnement fiable. De plus, cette
+              pratique permet d'optimiser l'efficacité énergétique, réduisant
+              les dépenses en énergie.
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-start">
+              <i
+                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+              ></i>
+            </div>
+            <h6
+              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+            >
+              Entretien de chaudière
+            </h6>
+            <p class="text-sm text-gray-900">
+              Un entretien de chaudière régulier effectué par BARBIN CPS
+              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
+              coûteuses et assurant un fonctionnement fiable. De plus, cette
+              pratique permet d'optimiser l'efficacité énergétique, réduisant
+              les dépenses en énergie.
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center justify-start">
+              <i
+                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+              ></i>
+            </div>
+            <h6
+              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+            >
+              Entretien de chaudière
+            </h6>
+            <p class="text-sm text-gray-900">
+              Un entretien de chaudière régulier effectué par BARBIN CPS
+              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
+              coûteuses et assurant un fonctionnement fiable. De plus, cette
+              pratique permet d'optimiser l'efficacité énergétique, réduisant
+              les dépenses en énergie.
+            </p>
           </div>
         </div>
         <div class="flex items-center justify-center -mx-4 lg:pl-8">
@@ -544,31 +586,31 @@ export default {
       chaudieres: [
         {
           nom: "Chaudière Viessmann",
-          img: "/img/chaudière_viessmann.jpg",
+          img: "/img/chaudiere_viessmann.jpg",
           lien: "https://www.viessmann.fr",
           id: 1,
         },
         {
           nom: "Chaudière Frisquet",
-          img: "/img/chaudière_frisquet.jpg",
+          img: "/img/chaudiere_frisquet.jpg",
           lien: "https://www.frisquet.fr",
           id: 2,
         },
         {
           nom: "Chaudière De Dietrich",
-          img: "/img/chaudière_dedietrich.jpg",
+          img: "/img/chaudiere_dedietrich.jpg",
           lien: "https://www.dedietrich-thermique.fr",
           id: 3,
         },
         {
           nom: "Chaudière Chappee",
-          img: "/img/chaudière_chappee.jpg",
+          img: "/img/chaudiere_chappee.jpg",
           lien: "https://www.chappee.com",
           id: 4,
         },
         {
           nom: "Chaudière ELM Leblanc",
-          img: "/img/chaudière_ELM_Leblanc.jpg",
+          img: "/img/chaudiere_ELM_Leblanc.jpg",
           lien: "https://www.elmleblanc.fr",
           id: 5,
         },
@@ -578,4 +620,49 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.scroll {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: relative;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 18px;
+    height: 18px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+@-webkit-keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+</style>
