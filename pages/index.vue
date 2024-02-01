@@ -4,7 +4,7 @@
     <section
       id="header"
       class="w-full h-screen bg-fixed bg-cover bg-center flex flex-col justify-around items-center"
-      style="background-image: url(/img/salle_de_bain.jpg);"
+      style="background-image: url(/img/salle_de_bain.jpg)"
     >
       <div></div>
       <div
@@ -93,6 +93,7 @@
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <h5
+        id="title_chauffage"
         class="pb-5 tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
       >
         Le Chauffage
@@ -100,6 +101,7 @@
       <div class="relative">
         <div class="absolute inset-0">
           <div
+            id="bg_chauffage"
             class="absolute inset-y-0 z-0 w-full h-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl lg:w-3/4"
           ></div>
         </div>
@@ -112,15 +114,17 @@
                 <div class="relative">
                   <div class="flex items-center justify-start">
                     <i
+                      id="block1_logo_chauffage"
                       class="mdi mdi-water-boiler mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                     ></i>
                   </div>
                   <h6
+                    id="block1_title_chauffage"
                     class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                   >
                     Installation de chaudière
                   </h6>
-                  <p class="text-sm text-gray-900">
+                  <p id="block1_text_chauffage" class="text-sm text-gray-900">
                     L'installation d'une chaudière neuve par BARBIN CPS vous
                     garantit une efficacité énergétique optimale, réduisant
                     ainsi les coûts de chauffage tout en minimisant l'impact
@@ -132,15 +136,17 @@
               <div>
                 <div class="flex items-center justify-start">
                   <i
+                    id="block2_logo_chauffage"
                     class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                   ></i>
                 </div>
                 <h6
+                  id="block2_title_chauffage"
                   class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 >
                   Entretien de chaudière
                 </h6>
-                <p class="text-sm text-gray-900">
+                <p id="block2_text_chauffage" class="text-sm text-gray-900">
                   Un entretien de chaudière régulier effectué par BARBIN CPS
                   prolonge la durée de vie de l'appareil, évitant ainsi les
                   pannes coûteuses et assurant un fonctionnement fiable. De
@@ -151,15 +157,17 @@
               <div>
                 <div class="flex justify-start lg:mt-0">
                   <i
+                    id="block3_logo_chauffage"
                     class="mdi mdi-tools mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                   ></i>
                 </div>
                 <h6
+                  id="block3_title_chauffage"
                   class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 >
                   Intervention d'urgence et réparation
                 </h6>
-                <p class="text-sm text-gray-900">
+                <p id="block3_text_chauffage" class="text-sm text-gray-900">
                   Les interventions de BARBIN CPS garantissent un rétablissement
                   rapide du chauffage, assurant ainsi le confort des occupants.
                   De plus, notre expertise garantit des solutions durables,
@@ -170,15 +178,17 @@
               <div>
                 <div class="flex items-center justify-start mt-8 lg:mt-0">
                   <i
+                    id="block4_logo_chauffage"
                     class="mdi mdi-fire mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                   ></i>
                 </div>
                 <h6
+                  id="block4_title_chauffage"
                   class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
                 >
                   Expert Gaz/Fioul
                 </h6>
-                <p class="text-sm text-gray-900">
+                <p id="block4_text_chauffage" class="text-sm text-gray-900">
                   BARBIN CPS intervient sur un grand nombre de marques de
                   chaudière, assurant ainsi des solutions sur mesure pour
                   l'efficacité énergétique et le confort thermique. Cette
@@ -188,7 +198,7 @@
                 </p>
               </div>
             </div>
-            <div>
+            <div id="image_chauffage">
               <swiper
                 class="mySwiper mt-8 rounded-xl shadow-2xl"
                 :loop="true"
@@ -569,44 +579,254 @@
 </template>
 
 <script>
-import { useGsap } from '#gsap'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import { useGsap } from "#gsap";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default {
   mounted() {
-    let tl_title_about = useGsap.timeline({
+    // ANIMATION ABOUT
+    let tlAbout = useGsap.timeline({
       scrollTrigger: {
-        trigger: '#about',
+        trigger: "#about",
         scrub: 1,
-        start: 'top 80%',
-        end: 'top 10%',
-        markers: true,
-        toggleActions: 'restart reverse none none',
+        start: "top 80%",
+        endTrigger: "#text2_about",
+        end: "top 50%",
+        toggleActions: "restart reverse none none",
       },
-    })
+    });
 
-    tl_title_about
-      .to('#title_about', { x: -100, y: -100, duration: 0, opacity: 0 })
-      .to('#text1_about', { x: -100, y: 0, duration: 0, opacity: 0 })
-      .to('#text2_about', { x: -100, y: 100, duration: 0, opacity: 0 })
-      .to('#image_about', { x: 100, y: 0, duration: 0, opacity: 0 })
-      .to('#text3_about', { x: 0, y: 100, duration: 0, opacity: 0 })
-      .to('#cta_about', { x: 0, y: 100, duration: 0, opacity: 0 })
-      .to('#title_about', { x: 0, y: 0, duration: 3, opacity: 1 })
-      .to('#text1_about', { x: 0, y: 0, duration: 3, opacity: 1 })
-      .to('#image_about', { x: 0, y: 0, duration: 3, opacity: 1 })
-      .to('#text2_about', { x: 0, y: 0, duration: 3, opacity: 1 })
-      .to('#text3_about', { x: 0, y: 0, duration: 3, opacity: 1 })
-      .to('#cta_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+    tlAbout
+      .to("#title_about", { x: -100, y: -100, duration: 0, opacity: 0 })
+      .to("#text1_about", { x: -100, y: 0, duration: 0, opacity: 0 })
+      .to("#text2_about", { x: -100, y: 100, duration: 0, opacity: 0 })
+      .to("#image_about", { x: 100, y: 0, duration: 0, opacity: 0 })
+      .to("#text3_about", { x: 0, y: 100, duration: 0, opacity: 0 })
+      .to("#cta_about", { x: 0, y: 0, duration: 0, opacity: 0 })
+      .to("#title_about", { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to("#text1_about", { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to("#image_about", { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to("#text2_about", { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to("#text3_about", { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to("#cta_about", { x: 0, y: 0, duration: 3, opacity: 1 });
+
+    // ANIMATION CHAUFFAGE
+    let tlChauffage = useGsap.timeline({
+      scrollTrigger: {
+        trigger: "#chauffage",
+        scrub: 4,
+        start: "top 80%",
+        endTrigger: "#image_chauffage",
+        end: "top 50%",
+        markers: true,
+        toggleActions: "restart reverse none none",
+      },
+    });
+
+    tlChauffage
+      //SETUP
+      .to("#title_chauffage", {
+        x: -10,
+        y: -10,
+        scale: 3,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#bg_chauffage", {
+        x: 0,
+        y: -10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block1_logo_chauffage", {
+        x: -10,
+        y: -10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block1_title_chauffage", {
+        x: -10,
+        y: -10,
+        scale: 1.5,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block1_text_chauffage", {
+        x: -10,
+        y: -10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block2_logo_chauffage", {
+        x: 10,
+        y: -10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block2_title_chauffage", {
+        x: 10,
+        y: -10,
+        scale: 1.5,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block2_text_chauffage", {
+        x: 10,
+        y: -10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block3_logo_chauffage", {
+        x: -10,
+        y: 10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block3_title_chauffage", {
+        x: -10,
+        y: 10,
+        scale: 1.5,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block3_text_chauffage", {
+        x: -10,
+        y: 10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block4_logo_chauffage", {
+        x: 10,
+        y: 10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block4_title_chauffage", {
+        x: 10,
+        y: 10,
+        scale: 1.5,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#block4_text_chauffage", {
+        x: 10,
+        y: 10,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      .to("#image_chauffage", {
+        x: 10,
+        y: 0,
+        scale: 1,
+        duration: 0,
+        opacity: 0,
+      })
+      //ANIMATION
+      .to("#title_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
+      .to("#bg_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
+      .to("#block1_logo_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block1_title_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block1_text_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block2_logo_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block2_title_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block2_text_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#image_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
+      .to("#block3_logo_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block3_title_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block3_text_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block4_logo_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block4_title_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      })
+      .to("#block4_text_chauffage", {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 3,
+        opacity: 1,
+      });
   },
 
   methods: {
     goToAbout() {
-      useGsap.to(window, { duration: 0, scrollTo: '#about' })
+      useGsap.to(window, { duration: 0, scrollTo: "#about" });
     },
   },
   components: {
@@ -614,190 +834,186 @@ export default {
     SwiperSlide,
   },
   setup() {
-    return { modules: [Autoplay, Pagination, Navigation] }
+    return { modules: [Autoplay, Pagination, Navigation] };
   },
   data() {
     return {
       partenaires: [
         {
-          nom: 'Frisquet',
-          img: '/img/logo/frisquet.png',
-          lien: 'https://www.frisquet.fr',
+          nom: "Frisquet",
+          img: "/img/logo/frisquet.png",
+          lien: "https://www.frisquet.fr",
           id: 1,
         },
         {
-          nom: 'De Dietrich',
-          img: '/img/logo/dedietrich.png',
-          lien: 'https://www.dedietrich.org',
+          nom: "De Dietrich",
+          img: "/img/logo/dedietrich.png",
+          lien: "https://www.dedietrich.org",
           id: 2,
         },
         {
-          nom: 'Viessmann',
-          img: '/img/logo/viessmann.png',
-          lien: 'https://www.viessmann.fr/',
+          nom: "Viessmann",
+          img: "/img/logo/viessmann.png",
+          lien: "https://www.viessmann.fr/",
           id: 3,
         },
         {
-          nom: 'ELM Leblanc',
-          img: '/img/logo/ELM.png',
-          lien: 'https://elmleblanc.fr',
+          nom: "ELM Leblanc",
+          img: "/img/logo/ELM.png",
+          lien: "https://elmleblanc.fr",
           id: 4,
         },
         {
-          nom: 'Chappee',
-          img: '/img/logo/chappee.png',
-          lien: 'https://www.chappee.fr',
+          nom: "Chappee",
+          img: "/img/logo/chappee.png",
+          lien: "https://www.chappee.fr",
           id: 4,
         },
         {
-          nom: 'Atlantic',
-          img: '/img/logo/atlantic.png',
-          lien: 'https://www.atlantic.fr',
+          nom: "Atlantic",
+          img: "/img/logo/atlantic.png",
+          lien: "https://www.atlantic.fr",
           id: 5,
         },
         {
-          nom: 'Acova',
-          img: '/img/logo/acova.png',
-          lien: 'https://www.acova.fr',
+          nom: "Acova",
+          img: "/img/logo/acova.png",
+          lien: "https://www.acova.fr",
           id: 6,
         },
         {
-          nom: 'Grohe',
-          img: '/img/logo/grohe.png',
-          lien: 'https://www.grohe.fr',
+          nom: "Grohe",
+          img: "/img/logo/grohe.png",
+          lien: "https://www.grohe.fr",
           id: 7,
         },
         {
-          nom: 'Hansgrohe',
-          img: '/img/logo/hansgrohe.png',
-          lien: 'https://www.hansgrohe.fr',
+          nom: "Hansgrohe",
+          img: "/img/logo/hansgrohe.png",
+          lien: "https://www.hansgrohe.fr",
           id: 8,
         },
         {
-          nom: 'Toto',
-          img: '/img/logo/toto.png',
-          lien: 'https://www.toto.fr',
+          nom: "Toto",
+          img: "/img/logo/toto.png",
+          lien: "https://www.toto.fr",
           id: 9,
         },
         {
-          nom: 'Franke',
-          img: '/img/logo/franke.png',
-          lien: 'https://www.franke.fr',
+          nom: "Franke",
+          img: "/img/logo/franke.png",
+          lien: "https://www.franke.fr",
           id: 10,
         },
         {
-          nom: 'Nicoll',
-          img: '/img/logo/nicoll.png',
-          lien: 'https://www.nicoll.fr',
+          nom: "Nicoll",
+          img: "/img/logo/nicoll.png",
+          lien: "https://www.nicoll.fr",
           id: 11,
         },
         {
-          nom: 'Allia',
-          img: '/img/logo/allia.png',
-          lien: 'https://www.allia.fr',
+          nom: "Allia",
+          img: "/img/logo/allia.png",
+          lien: "https://www.allia.fr",
           id: 12,
         },
         {
-          nom: 'Geberit',
-          img: '/img/logo/geberit.png',
-          lien: 'https://www.geberit.fr',
+          nom: "Geberit",
+          img: "/img/logo/geberit.png",
+          lien: "https://www.geberit.fr",
           id: 13,
         },
       ],
       certifications: [
         {
-          nom: 'Reconnu Garant de l’Environnement',
-          img: '/img/logo/rge.png',
-          lien:
-            'https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge',
+          nom: "Reconnu Garant de l’Environnement",
+          img: "/img/logo/rge.png",
+          lien: "https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge",
           id: 1,
         },
         {
-          nom: 'Qualibat',
-          img: '/img/logo/qualibat.png',
-          lien: '/',
+          nom: "Qualibat",
+          img: "/img/logo/qualibat.png",
+          lien: "/",
           id: 2,
         },
         {
-          nom: 'Professionnel du Gaz',
-          img: '/img/logo/pg.png',
-          lien: 'https://lesprofessionnelsdugaz.com/pg/18653',
+          nom: "Professionnel du Gaz",
+          img: "/img/logo/pg.png",
+          lien: "https://lesprofessionnelsdugaz.com/pg/18653",
           id: 3,
         },
       ],
       chaudieres: [
         {
-          nom: 'Chaudière Viessmann',
-          img: '/img/chaudiere_viessmann.jpg',
-          lien: 'https://www.viessmann.fr',
+          nom: "Chaudière Viessmann",
+          img: "/img/chaudiere_viessmann.jpg",
+          lien: "https://www.viessmann.fr",
           id: 1,
         },
         {
-          nom: 'Chaudière Frisquet',
-          img: '/img/chaudiere_frisquet.jpg',
-          lien: 'https://www.frisquet.fr',
+          nom: "Chaudière Frisquet",
+          img: "/img/chaudiere_frisquet.jpg",
+          lien: "https://www.frisquet.fr",
           id: 2,
         },
         {
-          nom: 'Chaudière De Dietrich',
-          img: '/img/chaudiere_dedietrich.jpg',
-          lien: 'https://www.dedietrich-thermique.fr',
+          nom: "Chaudière De Dietrich",
+          img: "/img/chaudiere_dedietrich.jpg",
+          lien: "https://www.dedietrich-thermique.fr",
           id: 3,
         },
         {
-          nom: 'Chaudière Chappee',
-          img: '/img/chaudiere_chappee.jpg',
-          lien: 'https://www.chappee.com',
+          nom: "Chaudière Chappee",
+          img: "/img/chaudiere_chappee.jpg",
+          lien: "https://www.chappee.com",
           id: 4,
         },
         {
-          nom: 'Chaudière ELM Leblanc',
-          img: '/img/chaudiere_ELM_Leblanc.jpg',
-          lien: 'https://www.elmleblanc.fr',
+          nom: "Chaudière ELM Leblanc",
+          img: "/img/chaudiere_ELM_Leblanc.jpg",
+          lien: "https://www.elmleblanc.fr",
           id: 5,
         },
       ],
       sdbs: [
         {
-          nom: 'Salle de bain avec toilette',
-          img: '/img/salle_de_bain_toilette1.jpg',
+          nom: "Salle de bain avec toilette",
+          img: "/img/salle_de_bain_toilette1.jpg",
           id: 1,
         },
         {
-          nom: 'Salle de bain avec toilette',
-          img: '/img/salle_de_bain_toilette2.jpg',
+          nom: "Salle de bain avec toilette",
+          img: "/img/salle_de_bain_toilette2.jpg",
           id: 2,
         },
         {
-          nom: 'Salle de bain avec toilette',
-          img: '/img/salle_de_bain_toilette3.jpg',
+          nom: "Salle de bain avec toilette",
+          img: "/img/salle_de_bain_toilette3.jpg",
           id: 3,
         },
         {
-          nom: 'Salle de bain',
-          img: '/img/salle_de_bain1.jpg',
+          nom: "Salle de bain",
+          img: "/img/salle_de_bain1.jpg",
           id: 4,
         },
         {
-          nom: 'Carrelage de douche',
-          img: '/img/carrelage_douche.jpg',
+          nom: "Carrelage de douche",
+          img: "/img/carrelage_douche.jpg",
           id: 5,
         },
         {
-          nom: 'Toilette avec accès handicapé',
-          img: '/img/toilette_handicap.jpg',
+          nom: "Toilette avec accès handicapé",
+          img: "/img/toilette_handicap.jpg",
           id: 6,
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <style>
-.test {
-  background-color: blueviolet;
-}
 .scroll {
   width: 60px;
   height: 60px;
@@ -807,7 +1023,7 @@ export default {
   animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 15px;
     left: 18px;
