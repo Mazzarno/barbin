@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <!-- HEADER / CONTACT I -->
+  <div class="scroll-smooth">
+    <!-- HEADER -->
     <section
+      id="header"
       class="w-full h-screen bg-fixed bg-cover bg-center flex flex-col justify-around items-center"
-      style="background-image: url(/img/salle_de_bain.jpg)"
+      style="background-image: url(/img/salle_de_bain.jpg);"
     >
-      <div class=""></div>
+      <div></div>
       <div
+        id="title"
         class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl text-center"
       >
         <h1
@@ -20,31 +22,35 @@
         </h1>
       </div>
       <div
-        class="mx-auto scroll self-end rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6"
+        @click="goToAbout"
+        id="scroll"
+        class="cursor-pointer mx-auto scroll self-end rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6 hover:shadow hover:bg-[#d1d7e0]"
       ></div>
     </section>
-    <!-- A PROPOS  -->
+    <!-- A PROPOS / CONTACT I -->
     <section
+      id="about"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <div class="grid gap-10 lg:grid-cols-2">
         <div class="lg:pr-10">
           <h5
+            id="title_about"
             class="pb-5 text-4xl font-bold tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent"
           >
             BARBIN CPS
             <br />
             Spécialiste Chauffage Plomberie et Sanitaire
-            <span class="inline-block"> depuis 1991 </span>
+            <span class="inline-block">depuis 1991</span>
           </h5>
-          <p class="mb-6 text-gray-900 text-lg">
+          <p id="text1_about" class="mb-6 text-gray-900 text-lg">
             Bienvenue chez BARBIN CPS, votre partenaire de confiance en matière
             de chauffage, plomberie et sanitaire depuis 1991. Forts de notre
             expertise, nous sommes fiers de vous offrir des services de qualité,
             alliant rapidité d'intervention et savoir-faire dans l'Oise et le
             Val-d'Oise.
           </p>
-          <p class="mb-6 text-gray-900 text-lg">
+          <p id="text2_about" class="mb-6 text-gray-900 text-lg">
             Notre équipe de professionnels qualifiés met tout en œuvre pour
             répondre à vos besoins en matière de chauffage, plomberie et
             sanitaire, que ce soit pour des installations, des réparations ou
@@ -53,6 +59,7 @@
         </div>
         <div class="flex place-items-center">
           <NuxtImg
+            id="image_about"
             loading="lazy"
             class="object-cover w-full h-56 rounded shadow-lg sm:h-96"
             src="/img/chauffe-eau.jpg"
@@ -60,9 +67,29 @@
           />
         </div>
       </div>
+
+      <div class="flex items-center justify-center mt-6">
+        <p
+          id="text3_about"
+          class="text-lg font-bold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent"
+        >
+          Besoin d'une intervention d'urgence, d'un devis gratuit ou vous voulez
+          simplement prendre un rendez-vous ?
+        </p>
+      </div>
+      <div class="flex items-center justify-center mt-6">
+        <a
+          id="cta_about"
+          href="/"
+          class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-opacity-90 backdrop-blur-xl drop-shadow-4xl shadow-2xl bg-[#03045E] hover:bg-[#023E8A] hover:shadow"
+        >
+          Contactez nous
+        </a>
+      </div>
     </section>
     <!-- CHAUFFAGE -->
     <section
+      id="chauffage"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <h5
@@ -197,6 +224,7 @@
     </section>
     <!-- CERTIFICATIONS -->
     <section
+      id="certifications"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <h5
@@ -269,6 +297,7 @@
     </section>
     <!-- PLOMBERIE -->
     <section
+      id="plomberie"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20"
     >
       <h5
@@ -277,101 +306,53 @@
         La Plomberie
       </h5>
       <div class="grid gap-10 lg:grid-cols-2">
-        <div class="lg:gap-12 lg:row-gap-5 lg:grid lg:grid-cols-2">
-          <div>
-            <div class="flex items-center justify-start">
-              <i
-                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              ></i>
-            </div>
-            <h6
-              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-            >
-              Entretien de chaudière
-            </h6>
-            <p class="text-sm text-gray-900">
-              Un entretien de chaudière régulier effectué par BARBIN CPS
-              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-              coûteuses et assurant un fonctionnement fiable. De plus, cette
-              pratique permet d'optimiser l'efficacité énergétique, réduisant
-              les dépenses en énergie.
-            </p>
-          </div>
-          <div>
-            <div class="flex items-center justify-start">
-              <i
-                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              ></i>
-            </div>
-            <h6
-              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-            >
-              Entretien de chaudière
-            </h6>
-            <p class="text-sm text-gray-900">
-              Un entretien de chaudière régulier effectué par BARBIN CPS
-              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-              coûteuses et assurant un fonctionnement fiable. De plus, cette
-              pratique permet d'optimiser l'efficacité énergétique, réduisant
-              les dépenses en énergie.
-            </p>
-          </div>
-          <div>
-            <div class="flex items-center justify-start">
-              <i
-                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              ></i>
-            </div>
-            <h6
-              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-            >
-              Entretien de chaudière
-            </h6>
-            <p class="text-sm text-gray-900">
-              Un entretien de chaudière régulier effectué par BARBIN CPS
-              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-              coûteuses et assurant un fonctionnement fiable. De plus, cette
-              pratique permet d'optimiser l'efficacité énergétique, réduisant
-              les dépenses en énergie.
-            </p>
-          </div>
-          <div>
-            <div class="flex items-center justify-start">
-              <i
-                class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-              ></i>
-            </div>
-            <h6
-              class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
-            >
-              Entretien de chaudière
-            </h6>
-            <p class="text-sm text-gray-900">
-              Un entretien de chaudière régulier effectué par BARBIN CPS
-              prolonge la durée de vie de l'appareil, évitant ainsi les pannes
-              coûteuses et assurant un fonctionnement fiable. De plus, cette
-              pratique permet d'optimiser l'efficacité énergétique, réduisant
-              les dépenses en énergie.
-            </p>
-          </div>
+        <div>
+          <h6
+            class="mb-2 text-lg font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+          >
+            Installation et rénovation
+          </h6>
+          <p class="text-lg text-gray-900">
+            Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
+            la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
+            assurant un fonctionnement fiable. De plus, cette pratique permet
+            d'optimiser l'efficacité énergétique, réduisant les dépenses en
+            énergie.
+          </p>
+          <h6
+            class="mb-2 mt-5 text-lg font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+          >
+            Intervention d'urgence et réparation
+          </h6>
+          <p class="text-lg text-gray-900">
+            Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
+            la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
+            assurant un fonctionnement fiable. De plus, cette pratique permet
+            d'optimiser l'efficacité énergétique, réduisant les dépenses en
+            énergie.
+          </p>
         </div>
+
         <div class="flex items-center justify-center -mx-4 lg:pl-8">
           <div class="flex flex-col items-end px-3">
-            <img
+            <NuxtImg
+              loading="lazy"
               class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-              src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src="/img/plomberie2.jpg"
               alt=""
             />
-            <img
+            <NuxtImg
+              loading="lazy"
               class="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              src="/img/plomberie1.jpg"
               alt=""
             />
           </div>
           <div class="px-3">
-            <img
+            <NuxtImg
+              loading="lazy"
               class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-              src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
+              src="/img/plomberie3.jpg"
               alt=""
             />
           </div>
@@ -380,6 +361,7 @@
     </section>
     <!-- PARTENAIRES -->
     <section
+      id="partenaires"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <h5
@@ -452,8 +434,133 @@
     </section>
     <!-- SANITAIRE -->
     <section
-      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
-    ></section>
+      id="sanitaire"
+      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    >
+      <h5
+        class="pb-5 tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
+      >
+        Le Sanitaire
+      </h5>
+      <div class="relative">
+        <div class="absolute inset-0">
+          <div
+            class="absolute inset-y-0 z-0 w-full h-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl lg:w-3/4"
+          ></div>
+        </div>
+        <div class="relative p-5">
+          <div
+            class="lg:gap-12 lg:row-gap-8 lg:grid lg:grid-cols-2 items-center"
+          >
+            <div class="lg:gap-12 lg:row-gap-5 lg:grid lg:grid-cols-2">
+              <div class="relative">
+                <div class="relative">
+                  <div class="flex items-center justify-start">
+                    <i
+                      class="mdi mdi-shower mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                    ></i>
+                  </div>
+                  <h6
+                    class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                  >
+                    Installation Sanitaire
+                  </h6>
+                  <p class="text-sm text-gray-900">
+                    BARBIN CPS vous garentis des installations sanitaires,
+                    telles que toilettes, éviers, lavabos, douches, baignoires
+                    et chauffe-eau conforments, fiables et sécurisées,
+                    respectant les normes et minimisant les risques de pannes ou
+                    de problèmes futurs.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center justify-start">
+                  <i
+                    class="mdi mdi-file-sign mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                  ></i>
+                </div>
+                <h6
+                  class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                >
+                  Entretien de chauffe-eau et adoucisseur
+                </h6>
+                <p class="text-sm text-gray-900">
+                  Faire appel à BARBIN CPS pour l'entretien de chauffe-eau et
+                  d'adoucisseur garantit un fonctionnement optimal de ces
+                  équipements, prolongeant ainsi leur durée de vie. De plus,
+                  cette expertise assure une maintenance conforme aux normes,
+                  contribuant à la performance énergétique et à la qualité de
+                  l'eau.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-start lg:mt-0">
+                  <i
+                    class="mdi mdi-tools mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                  ></i>
+                </div>
+                <h6
+                  class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                >
+                  Intervention d'urgence et réparation
+                </h6>
+                <p class="text-sm text-gray-900">
+                  Les interventions de BARBIN CPS assurent un rétablissement
+                  rapide de tout équipement sanitaire tels que les fuites d'eau,
+                  les obstructions ou les dysfonctionnements des équipements.
+                  L'expertise de BARBIN CPS garantit des interventions précises
+                  et durables, assurant la fiabilité des équipements sanitaires.
+                </p>
+              </div>
+              <div>
+                <div class="flex items-center justify-start mt-8 lg:mt-0">
+                  <i
+                    class="mdi mdi-magnify mdi-24px bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                  ></i>
+                </div>
+                <h6
+                  class="mb-2 font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
+                >
+                  Expert sanitaire
+                </h6>
+                <p class="text-sm text-gray-900">
+                  BARBIN CPS, expert dans le catalogue sanitaire pour
+                  l'installation et la réparation en pièces détachées des
+                  équipements assure des solutions précises et compatibles,
+                  garantissant ainsi une mise ou remise en état efficace et
+                  durable.
+                </p>
+              </div>
+            </div>
+            <div>
+              <swiper
+                class="mySwiper mt-8 rounded-xl shadow-2xl"
+                :loop="true"
+                :autoplay="{
+                  delay: 3000,
+                }"
+                :pagination="false"
+                :grabCursor="false"
+                :modules="modules"
+              >
+                <swiper-slide
+                  v-for="sdb in sdbs"
+                  :key="sdb.id"
+                  class="rounded-xl shadow-2xl"
+                >
+                  <NuxtImg
+                    class="lg:object-cover w-full rounded-xl shadow-2xl h-96"
+                    :src="sdb.img"
+                    :alt="sdb.nom"
+                  />
+                </swiper-slide>
+              </swiper>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- CONTACT II -->
     <section
       class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
@@ -462,182 +569,252 @@
 </template>
 
 <script>
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useGsap } from '#gsap'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
 export default {
+  mounted() {
+    let tl_title_about = useGsap.timeline({
+      scrollTrigger: {
+        trigger: '#about',
+        scrub: 1,
+        start: 'top 80%',
+        end: 'top 10%',
+        markers: true,
+        toggleActions: 'restart reverse none none',
+      },
+    })
+
+    tl_title_about
+      .to('#title_about', { x: -100, y: -100, duration: 0, opacity: 0 })
+      .to('#text1_about', { x: -100, y: 0, duration: 0, opacity: 0 })
+      .to('#text2_about', { x: -100, y: 100, duration: 0, opacity: 0 })
+      .to('#image_about', { x: 100, y: 0, duration: 0, opacity: 0 })
+      .to('#text3_about', { x: 0, y: 100, duration: 0, opacity: 0 })
+      .to('#cta_about', { x: 0, y: 100, duration: 0, opacity: 0 })
+      .to('#title_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to('#text1_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to('#image_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to('#text2_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to('#text3_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+      .to('#cta_about', { x: 0, y: 0, duration: 3, opacity: 1 })
+  },
+
+  methods: {
+    goToAbout() {
+      useGsap.to(window, { duration: 0, scrollTo: '#about' })
+    },
+  },
   components: {
     Swiper,
     SwiperSlide,
   },
   setup() {
-    return { modules: [Autoplay, Pagination, Navigation] };
+    return { modules: [Autoplay, Pagination, Navigation] }
   },
   data() {
     return {
       partenaires: [
         {
-          nom: "Frisquet",
-          img: "/img/logo/frisquet.png",
-          lien: "https://www.frisquet.fr",
+          nom: 'Frisquet',
+          img: '/img/logo/frisquet.png',
+          lien: 'https://www.frisquet.fr',
           id: 1,
         },
         {
-          nom: "De Dietrich",
-          img: "/img/logo/dedietrich.png",
-          lien: "https://www.dedietrich.org",
+          nom: 'De Dietrich',
+          img: '/img/logo/dedietrich.png',
+          lien: 'https://www.dedietrich.org',
           id: 2,
         },
         {
-          nom: "Viessmann",
-          img: "/img/logo/viessmann.png",
-          lien: "https://www.viessmann.fr/",
+          nom: 'Viessmann',
+          img: '/img/logo/viessmann.png',
+          lien: 'https://www.viessmann.fr/',
           id: 3,
         },
         {
-          nom: "ELM Leblanc",
-          img: "/img/logo/ELM.png",
-          lien: "https://elmleblanc.fr",
+          nom: 'ELM Leblanc',
+          img: '/img/logo/ELM.png',
+          lien: 'https://elmleblanc.fr',
           id: 4,
         },
         {
-          nom: "Chappee",
-          img: "/img/logo/chappee.png",
-          lien: "https://www.chappee.fr",
+          nom: 'Chappee',
+          img: '/img/logo/chappee.png',
+          lien: 'https://www.chappee.fr',
           id: 4,
         },
         {
-          nom: "Atlantic",
-          img: "/img/logo/atlantic.png",
-          lien: "https://www.atlantic.fr",
+          nom: 'Atlantic',
+          img: '/img/logo/atlantic.png',
+          lien: 'https://www.atlantic.fr',
           id: 5,
         },
         {
-          nom: "Acova",
-          img: "/img/logo/acova.png",
-          lien: "https://www.acova.fr",
+          nom: 'Acova',
+          img: '/img/logo/acova.png',
+          lien: 'https://www.acova.fr',
           id: 6,
         },
         {
-          nom: "Grohe",
-          img: "/img/logo/grohe.png",
-          lien: "https://www.grohe.fr",
+          nom: 'Grohe',
+          img: '/img/logo/grohe.png',
+          lien: 'https://www.grohe.fr',
           id: 7,
         },
         {
-          nom: "Hansgrohe",
-          img: "/img/logo/hansgrohe.png",
-          lien: "https://www.hansgrohe.fr",
+          nom: 'Hansgrohe',
+          img: '/img/logo/hansgrohe.png',
+          lien: 'https://www.hansgrohe.fr',
           id: 8,
         },
         {
-          nom: "Toto",
-          img: "/img/logo/toto.png",
-          lien: "https://www.toto.fr",
+          nom: 'Toto',
+          img: '/img/logo/toto.png',
+          lien: 'https://www.toto.fr',
           id: 9,
         },
         {
-          nom: "Franke",
-          img: "/img/logo/franke.png",
-          lien: "https://www.franke.fr",
+          nom: 'Franke',
+          img: '/img/logo/franke.png',
+          lien: 'https://www.franke.fr',
           id: 10,
         },
         {
-          nom: "Nicoll",
-          img: "/img/logo/nicoll.png",
-          lien: "https://www.nicoll.fr",
+          nom: 'Nicoll',
+          img: '/img/logo/nicoll.png',
+          lien: 'https://www.nicoll.fr',
           id: 11,
         },
         {
-          nom: "Allia",
-          img: "/img/logo/allia.png",
-          lien: "https://www.allia.fr",
+          nom: 'Allia',
+          img: '/img/logo/allia.png',
+          lien: 'https://www.allia.fr',
           id: 12,
         },
         {
-          nom: "Geberit",
-          img: "/img/logo/geberit.png",
-          lien: "https://www.geberit.fr",
+          nom: 'Geberit',
+          img: '/img/logo/geberit.png',
+          lien: 'https://www.geberit.fr',
           id: 13,
         },
       ],
       certifications: [
         {
-          nom: "Reconnu Garant de l’Environnement",
-          img: "/img/logo/rge.png",
-          lien: "https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge",
+          nom: 'Reconnu Garant de l’Environnement',
+          img: '/img/logo/rge.png',
+          lien:
+            'https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge',
           id: 1,
         },
         {
-          nom: "Qualibat",
-          img: "/img/logo/qualibat.png",
-          lien: "/",
+          nom: 'Qualibat',
+          img: '/img/logo/qualibat.png',
+          lien: '/',
           id: 2,
         },
         {
-          nom: "Professionnel du Gaz",
-          img: "/img/logo/pg.png",
-          lien: "https://lesprofessionnelsdugaz.com/pg/18653",
+          nom: 'Professionnel du Gaz',
+          img: '/img/logo/pg.png',
+          lien: 'https://lesprofessionnelsdugaz.com/pg/18653',
           id: 3,
         },
       ],
       chaudieres: [
         {
-          nom: "Chaudière Viessmann",
-          img: "/img/chaudiere_viessmann.jpg",
-          lien: "https://www.viessmann.fr",
+          nom: 'Chaudière Viessmann',
+          img: '/img/chaudiere_viessmann.jpg',
+          lien: 'https://www.viessmann.fr',
           id: 1,
         },
         {
-          nom: "Chaudière Frisquet",
-          img: "/img/chaudiere_frisquet.jpg",
-          lien: "https://www.frisquet.fr",
+          nom: 'Chaudière Frisquet',
+          img: '/img/chaudiere_frisquet.jpg',
+          lien: 'https://www.frisquet.fr',
           id: 2,
         },
         {
-          nom: "Chaudière De Dietrich",
-          img: "/img/chaudiere_dedietrich.jpg",
-          lien: "https://www.dedietrich-thermique.fr",
+          nom: 'Chaudière De Dietrich',
+          img: '/img/chaudiere_dedietrich.jpg',
+          lien: 'https://www.dedietrich-thermique.fr',
           id: 3,
         },
         {
-          nom: "Chaudière Chappee",
-          img: "/img/chaudiere_chappee.jpg",
-          lien: "https://www.chappee.com",
+          nom: 'Chaudière Chappee',
+          img: '/img/chaudiere_chappee.jpg',
+          lien: 'https://www.chappee.com',
           id: 4,
         },
         {
-          nom: "Chaudière ELM Leblanc",
-          img: "/img/chaudiere_ELM_Leblanc.jpg",
-          lien: "https://www.elmleblanc.fr",
+          nom: 'Chaudière ELM Leblanc',
+          img: '/img/chaudiere_ELM_Leblanc.jpg',
+          lien: 'https://www.elmleblanc.fr',
           id: 5,
         },
       ],
-    };
+      sdbs: [
+        {
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette1.jpg',
+          id: 1,
+        },
+        {
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette2.jpg',
+          id: 2,
+        },
+        {
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette3.jpg',
+          id: 3,
+        },
+        {
+          nom: 'Salle de bain',
+          img: '/img/salle_de_bain1.jpg',
+          id: 4,
+        },
+        {
+          nom: 'Carrelage de douche',
+          img: '/img/carrelage_douche.jpg',
+          id: 5,
+        },
+        {
+          nom: 'Toilette avec accès handicapé',
+          img: '/img/toilette_handicap.jpg',
+          id: 6,
+        },
+      ],
+    }
   },
-};
+}
 </script>
 
 <style>
+.test {
+  background-color: blueviolet;
+}
 .scroll {
   width: 60px;
   height: 60px;
-  border: 2px solid #333;
+  border: 2px solid #03045e;
   border-radius: 50%;
   position: relative;
   animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 15px;
     left: 18px;
     width: 18px;
     height: 18px;
-    border-left: 2px solid #333;
-    border-bottom: 2px solid #333;
+    border-left: 2px solid #03045e;
+    border-bottom: 2px solid #03045e;
     transform: rotate(-45deg);
   }
 }

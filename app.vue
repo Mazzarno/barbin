@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="scroll-smooth">
     <!--<Loading v-if="loading" />-->
     <NuxtLayout>
       <NuxtPage />

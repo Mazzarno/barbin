@@ -6,12 +6,20 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxtjs/tailwindcss",
+    "@hypernym/nuxt-gsap",
     "@nuxt/image",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-swiper",
   ],
-
+  gsap: {
+    composables: true,
+    provide: true,
+    extraPlugins: {
+      scrollTrigger: true,
+      scrollTo: true,
+    },
+  },
   site: {
     url: "https://barbin-cps.fr",
     name: "Barbin CPS",

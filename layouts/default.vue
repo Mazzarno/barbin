@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-0">
+  <div class="relative z-0 scroll-smooth">
     <!-- NAVBAR -->
     <nav
       :class="{ 'hidden-navbar': !showNavbar }"
@@ -9,10 +9,10 @@
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
         <NuxtLink
-          to="/"
+          @click="goToTop"
           aria-label="BARBIN C.P.S"
           title="BARBIN C.P.S"
-          class="inline-flex items-center"
+          class="inline-flex items-center cursor-pointer"
         >
           <div
             class="transition delay-100 hover:scale-105 duration-300 h-16 ml-5"
@@ -100,7 +100,12 @@
         </NuxtLink>
         <ul class="items-center hidden space-x-8 lg:flex">
           <li>
-            <NuxtLink to="/" aria-label="Chauffage" title="Chauffage">
+            <NuxtLink
+              @click="goToChauffage"
+              aria-label="Chauffage"
+              title="Chauffage"
+              class="cursor-pointer"
+            >
               <h1
                 class="link-btn text-xl mt-3 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
@@ -109,7 +114,12 @@
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink href="/" aria-label="Plomberie" title="Plomberie">
+            <NuxtLink
+              @click="goToPlomberie"
+              aria-label="Plomberie"
+              title="Plomberie"
+              class="cursor-pointer"
+            >
               <h1
                 class="link-btn text-xl mt-3 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
@@ -118,7 +128,12 @@
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/" aria-label="Sanitaire" title="Sanitaire">
+            <NuxtLink
+              @click="goToSanitaire"
+              aria-label="Sanitaire"
+              title="Sanitaire"
+              class="cursor-pointer"
+            >
               <h1
                 class="link-btn text-xl p-4 mt-3 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent hover:text-[#03045E] transition delay-100 hover:scale-105 duration-100"
               >
@@ -183,24 +198,100 @@
       <div class="flex pr-2 justify-end">
         <button
           @click="drawer()"
-          class="text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+          class="cursor-pointer text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
         >
           <i class="mdi mdi-close"></i>
         </button>
       </div>
-
       <NuxtLink
-        to="/"
+        @click="goToTop"
         aria-label="BARBIN C.P.S"
         title="BARBIN C.P.S"
-        class="inline-flex items-center"
+        class="h-16 ml-20 cursor-pointer"
       >
-        <NuxtImg
-          loading="lazy"
-          src="/logo_nav.svg"
-          class="h-16 ml-20 @tailwind utilities;"
-          alt="BARBIN C.P.S logo"
-        />
+        <div
+          class="transition delay-100 hover:scale-105 duration-300 h-16 ml-5"
+        >
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 99 39"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="logo_nav">
+              <g id="logo">
+                <path
+                  id="Water"
+                  d="M46.2043 17.7112C44.6667 16.798 45.3232 15.0728 46.0735 13.861C46.4141 13.3106 46.6733 12.7009 46.9176 12.1012C46.9736 11.9663 47.0279 11.9663 47.0805 12.1012C47.3668 12.8235 47.7165 13.5459 48.1295 14.2682C48.5408 14.9872 48.7539 15.5524 48.7687 15.9638C48.795 16.7322 48.419 17.3369 47.6408 17.7779C47.2261 18.0123 46.619 17.9556 46.2043 17.7112Z"
+                  fill="url(#paint0_linear_119_2)"
+                />
+                <path
+                  id="WaterFlame"
+                  d="M46.2043 17.7112C44.6667 16.798 45.3232 15.0728 46.0735 13.861C46.4141 13.3106 46.6733 12.7009 46.9176 12.1012C46.9736 11.9663 47.0279 11.9663 47.0805 12.1012C47.3668 12.8235 47.7165 13.5459 48.1295 14.2682C48.5408 14.9872 48.7539 15.5524 48.7687 15.9638C48.795 16.7322 48.419 17.3369 47.6408 17.7779C47.2261 18.0123 46.619 17.9556 46.2043 17.7112Z"
+                  fill="url(#paint1_linear_119_2)"
+                />
+                <path
+                  id="Flame"
+                  d="M47 6C46.9253 6.68533 46.86 7.43733 46.804 8.256C46.74 9.18533 46.5493 10.112 46.232 11.036C45.864 12.102 45.138 12.98 44.658 13.968C43.7607 15.812 44.0753 17.342 45.602 18.558C45.6673 18.61 45.658 18.6313 45.574 18.622C44.574 18.51 43.6787 18.1413 42.888 17.516C41.852 16.6987 41.2487 15.6487 41.078 14.366C40.68 11.356 42.55 9.318 44.276 7.178C45.2493 5.96733 45.9573 4.68066 46.4 3.318C46.5853 2.74333 46.7627 2.16733 46.932 1.59C47 1.358 47.0613 1.35933 47.116 1.594C47.4293 2.942 47.8707 4.14533 48.44 5.204C49.236 6.686 50.4 7.972 51.418 9.304C52.898 11.24 53.638 13.968 52.288 16.18C51.4707 17.5213 50.254 18.3293 48.638 18.604C48.4007 18.644 48.3753 18.5873 48.562 18.434C50.478 16.848 49.986 14.856 48.832 13.058C48.1413 11.9833 47.7053 11.018 47.524 10.162C47.28 9.014 47.1213 7.62666 47.048 6C47.0387 5.78666 47.0227 5.78666 47 6Z"
+                  fill="url(#paint2_linear_119_2)"
+                />
+                <path
+                  id="BARBINCPS"
+                  d="M9.00984 25.556C9.71784 25.688 10.2998 26.042 10.7558 26.618C11.2118 27.194 11.4398 27.854 11.4398 28.598C11.4398 29.27 11.2718 29.864 10.9358 30.38C10.6118 30.884 10.1378 31.28 9.51384 31.568C8.88984 31.856 8.15184 32 7.29984 32H1.88184V19.436H7.06584C7.91784 19.436 8.64984 19.574 9.26184 19.85C9.88584 20.126 10.3538 20.51 10.6658 21.002C10.9898 21.494 11.1518 22.052 11.1518 22.676C11.1518 23.408 10.9538 24.02 10.5578 24.512C10.1738 25.004 9.65784 25.352 9.00984 25.556ZM4.40184 24.62H6.70584C7.30584 24.62 7.76784 24.488 8.09184 24.224C8.41584 23.948 8.57784 23.558 8.57784 23.054C8.57784 22.55 8.41584 22.16 8.09184 21.884C7.76784 21.608 7.30584 21.47 6.70584 21.47H4.40184V24.62ZM6.93984 29.948C7.55184 29.948 8.02584 29.804 8.36184 29.516C8.70984 29.228 8.88384 28.82 8.88384 28.292C8.88384 27.752 8.70384 27.332 8.34384 27.032C7.98384 26.72 7.49784 26.564 6.88584 26.564H4.40184V29.948H6.93984ZM20.2522 29.606H15.2482L14.4202 32H11.7742L16.2922 19.418H19.2263L23.7443 32H21.0803L20.2522 29.606ZM19.5683 27.59L17.7502 22.334L15.9322 27.59H19.5683ZM31.013 32L28.241 27.104H27.053V32H24.533V19.436H29.249C30.221 19.436 31.049 19.61 31.733 19.958C32.417 20.294 32.927 20.756 33.263 21.344C33.611 21.92 33.785 22.568 33.785 23.288C33.785 24.116 33.545 24.866 33.065 25.538C32.585 26.198 31.871 26.654 30.923 26.906L33.929 32H31.013ZM27.053 25.214H29.159C29.843 25.214 30.353 25.052 30.689 24.728C31.025 24.392 31.193 23.93 31.193 23.342C31.193 22.766 31.025 22.322 30.689 22.01C30.353 21.686 29.843 21.524 29.159 21.524H27.053V25.214ZM42.2923 25.556C43.0003 25.688 43.5823 26.042 44.0383 26.618C44.4943 27.194 44.7223 27.854 44.7223 28.598C44.7223 29.27 44.5543 29.864 44.2183 30.38C43.8943 30.884 43.4203 31.28 42.7963 31.568C42.1723 31.856 41.4343 32 40.5823 32H35.1643V19.436H40.3483C41.2003 19.436 41.9323 19.574 42.5443 19.85C43.1683 20.126 43.6363 20.51 43.9483 21.002C44.2723 21.494 44.4343 22.052 44.4343 22.676C44.4343 23.408 44.2363 24.02 43.8403 24.512C43.4563 25.004 42.9403 25.352 42.2923 25.556ZM37.6843 24.62H39.9883C40.5883 24.62 41.0503 24.488 41.3743 24.224C41.6983 23.948 41.8603 23.558 41.8603 23.054C41.8603 22.55 41.6983 22.16 41.3743 21.884C41.0503 21.608 40.5883 21.47 39.9883 21.47H37.6843V24.62ZM40.2223 29.948C40.8343 29.948 41.3083 29.804 41.6443 29.516C41.9923 29.228 42.1663 28.82 42.1663 28.292C42.1663 27.752 41.9863 27.332 41.6263 27.032C41.2663 26.72 40.7803 26.564 40.1683 26.564H37.6843V29.948H40.2223ZM48.3507 19.436V32H45.8307V19.436H48.3507ZM60.6864 32H58.1664L52.4604 23.378V32H49.9404V19.418H52.4604L58.1664 28.058V19.418H60.6864V32ZM65.0538 25.7C65.0538 24.464 65.3298 23.36 65.8818 22.388C66.4458 21.404 67.2078 20.642 68.1678 20.102C69.1398 19.55 70.2258 19.274 71.4258 19.274C72.8298 19.274 74.0598 19.634 75.1158 20.354C76.1718 21.074 76.9098 22.07 77.3298 23.342H74.4318C74.1438 22.742 73.7358 22.292 73.2078 21.992C72.6918 21.692 72.0918 21.542 71.4078 21.542C70.6758 21.542 70.0218 21.716 69.4458 22.064C68.8818 22.4 68.4378 22.88 68.1138 23.504C67.8018 24.128 67.6458 24.86 67.6458 25.7C67.6458 26.528 67.8018 27.26 68.1138 27.896C68.4378 28.52 68.8818 29.006 69.4458 29.354C70.0218 29.69 70.6758 29.858 71.4078 29.858C72.0918 29.858 72.6918 29.708 73.2078 29.408C73.7358 29.096 74.1438 28.64 74.4318 28.04H77.3298C76.9098 29.324 76.1718 30.326 75.1158 31.046C74.0718 31.754 72.8418 32.108 71.4258 32.108C70.2258 32.108 69.1398 31.838 68.1678 31.298C67.2078 30.746 66.4458 29.984 65.8818 29.012C65.3298 28.04 65.0538 26.936 65.0538 25.7ZM87.7442 23.324C87.7442 23.996 87.5822 24.626 87.2582 25.214C86.9462 25.802 86.4482 26.276 85.7642 26.636C85.0922 26.996 84.2402 27.176 83.2082 27.176H81.1022V32H78.5822V19.436H83.2082C84.1802 19.436 85.0082 19.604 85.6922 19.94C86.3762 20.276 86.8862 20.738 87.2222 21.326C87.5702 21.914 87.7442 22.58 87.7442 23.324ZM83.1002 25.142C83.7962 25.142 84.3122 24.986 84.6482 24.674C84.9842 24.35 85.1522 23.9 85.1522 23.324C85.1522 22.1 84.4682 21.488 83.1002 21.488H81.1022V25.142H83.1002ZM92.9714 32.126C92.0954 32.126 91.3034 31.976 90.5954 31.676C89.8994 31.376 89.3474 30.944 88.9394 30.38C88.5314 29.816 88.3214 29.15 88.3094 28.382H91.0094C91.0454 28.898 91.2254 29.306 91.5494 29.606C91.8854 29.906 92.3414 30.056 92.9174 30.056C93.5054 30.056 93.9674 29.918 94.3034 29.642C94.6394 29.354 94.8074 28.982 94.8074 28.526C94.8074 28.154 94.6934 27.848 94.4654 27.608C94.2374 27.368 93.9494 27.182 93.6014 27.05C93.2654 26.906 92.7974 26.75 92.1974 26.582C91.3814 26.342 90.7154 26.108 90.1994 25.88C89.6954 25.64 89.2574 25.286 88.8854 24.818C88.5254 24.338 88.3454 23.702 88.3454 22.91C88.3454 22.166 88.5314 21.518 88.9034 20.966C89.2754 20.414 89.7974 19.994 90.4694 19.706C91.1414 19.406 91.9094 19.256 92.7734 19.256C94.0694 19.256 95.1194 19.574 95.9234 20.21C96.7394 20.834 97.1894 21.71 97.2734 22.838H94.5014C94.4774 22.406 94.2914 22.052 93.9434 21.776C93.6074 21.488 93.1574 21.344 92.5934 21.344C92.1014 21.344 91.7054 21.47 91.4054 21.722C91.1174 21.974 90.9734 22.34 90.9734 22.82C90.9734 23.156 91.0814 23.438 91.2974 23.666C91.5254 23.882 91.8014 24.062 92.1254 24.206C92.4614 24.338 92.9294 24.494 93.5294 24.674C94.3454 24.914 95.0114 25.154 95.5274 25.394C96.0434 25.634 96.4874 25.994 96.8594 26.474C97.2314 26.954 97.4174 27.584 97.4174 28.364C97.4174 29.036 97.2434 29.66 96.8954 30.236C96.5474 30.812 96.0374 31.274 95.3654 31.622C94.6934 31.958 93.8954 32.126 92.9714 32.126Z"
+                  fill="url(#paint3_linear_119_2)"
+                />
+              </g>
+            </g>
+            <defs>
+              <linearGradient
+                id="paint0_linear_119_2"
+                x1="47.02"
+                y1="12"
+                x2="47.02"
+                y2="17.927"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#023E8A" />
+                <stop offset="1" stop-color="#03045E" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_119_2"
+                x1="47.02"
+                y1="12"
+                x2="47.02"
+                y2="17.927"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#023E8A" />
+                <stop offset="1" stop-color="#03045E" />
+              </linearGradient>
+              <linearGradient
+                id="paint2_linear_119_2"
+                x1="47.0102"
+                y1="1.41699"
+                x2="47.0102"
+                y2="18.6241"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.14" stop-color="#9D0208" />
+                <stop offset="0.605" stop-color="#E85D04" />
+                <stop offset="1" stop-color="#FFBA08" />
+              </linearGradient>
+              <linearGradient
+                id="paint3_linear_119_2"
+                x1="49.5"
+                y1="12"
+                x2="49.5"
+                y2="39"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#023E8A" />
+                <stop offset="1" stop-color="#03045E" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
       </NuxtLink>
 
       <div class="flex flex-col justify-around items-center h-5/6">
@@ -218,19 +309,7 @@
             </NuxtLink>
           </li>-->
           <li class="my-8">
-            <NuxtLink to="/">
-              <span
-                class="mdi mdi-water-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
-              ></span>
-              <span
-                class="ml-3 text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
-              >
-                Plomberie
-              </span>
-            </NuxtLink>
-          </li>
-          <li class="my-8">
-            <NuxtLink to="">
+            <NuxtLink class="cursor-pointer" @click="goToChauffage">
               <span
                 class="mdi mdi-home-thermometer-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
               ></span>
@@ -241,8 +320,20 @@
               </span>
             </NuxtLink>
           </li>
+          <li class="my-8">
+            <NuxtLink class="cursor-pointer" @click="goToPlomberie">
+              <span
+                class="mdi mdi-water-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+              ></span>
+              <span
+                class="ml-3 text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+              >
+                Plomberie
+              </span>
+            </NuxtLink>
+          </li>
           <li class="my-0">
-            <NuxtLink to="">
+            <NuxtLink class="cursor-pointer" @click="goToSanitaire">
               <span
                 class="mdi mdi-shower mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
               ></span>
@@ -258,7 +349,7 @@
           <h1
             @click="contact()"
             :class="{ hidden: showContact }"
-            class="text-xl p-4 mt-6 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+            class="cursor-pointer text-xl p-4 mt-6 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
           >
             Contact
           </h1>
@@ -308,24 +399,99 @@
       <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div class="sm:col-span-2">
           <NuxtLink
-            to="/"
+            @click="goToTop"
             aria-label="BARBIN C.P.S"
             title="BARBIN C.P.S"
-            class="inline-flex items-center"
+            class="inline-flex items-center cursor-pointer"
           >
-            <NuxtImg
-              loading="lazy"
-              src="/logo_nav.svg"
-              class="transition delay-100 hover:scale-105 duration-300 h-16"
-              alt="BARBIN C.P.S logo"
-            />
+            <div class="transition delay-100 hover:scale-105 duration-300 h-16">
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 99 39"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="logo_nav">
+                  <g id="logo">
+                    <path
+                      id="Water"
+                      d="M46.2043 17.7112C44.6667 16.798 45.3232 15.0728 46.0735 13.861C46.4141 13.3106 46.6733 12.7009 46.9176 12.1012C46.9736 11.9663 47.0279 11.9663 47.0805 12.1012C47.3668 12.8235 47.7165 13.5459 48.1295 14.2682C48.5408 14.9872 48.7539 15.5524 48.7687 15.9638C48.795 16.7322 48.419 17.3369 47.6408 17.7779C47.2261 18.0123 46.619 17.9556 46.2043 17.7112Z"
+                      fill="url(#paint0_linear_119_2)"
+                    />
+                    <path
+                      id="WaterFlame"
+                      d="M46.2043 17.7112C44.6667 16.798 45.3232 15.0728 46.0735 13.861C46.4141 13.3106 46.6733 12.7009 46.9176 12.1012C46.9736 11.9663 47.0279 11.9663 47.0805 12.1012C47.3668 12.8235 47.7165 13.5459 48.1295 14.2682C48.5408 14.9872 48.7539 15.5524 48.7687 15.9638C48.795 16.7322 48.419 17.3369 47.6408 17.7779C47.2261 18.0123 46.619 17.9556 46.2043 17.7112Z"
+                      fill="url(#paint1_linear_119_2)"
+                    />
+                    <path
+                      id="Flame"
+                      d="M47 6C46.9253 6.68533 46.86 7.43733 46.804 8.256C46.74 9.18533 46.5493 10.112 46.232 11.036C45.864 12.102 45.138 12.98 44.658 13.968C43.7607 15.812 44.0753 17.342 45.602 18.558C45.6673 18.61 45.658 18.6313 45.574 18.622C44.574 18.51 43.6787 18.1413 42.888 17.516C41.852 16.6987 41.2487 15.6487 41.078 14.366C40.68 11.356 42.55 9.318 44.276 7.178C45.2493 5.96733 45.9573 4.68066 46.4 3.318C46.5853 2.74333 46.7627 2.16733 46.932 1.59C47 1.358 47.0613 1.35933 47.116 1.594C47.4293 2.942 47.8707 4.14533 48.44 5.204C49.236 6.686 50.4 7.972 51.418 9.304C52.898 11.24 53.638 13.968 52.288 16.18C51.4707 17.5213 50.254 18.3293 48.638 18.604C48.4007 18.644 48.3753 18.5873 48.562 18.434C50.478 16.848 49.986 14.856 48.832 13.058C48.1413 11.9833 47.7053 11.018 47.524 10.162C47.28 9.014 47.1213 7.62666 47.048 6C47.0387 5.78666 47.0227 5.78666 47 6Z"
+                      fill="url(#paint2_linear_119_2)"
+                    />
+                    <path
+                      id="BARBINCPS"
+                      d="M9.00984 25.556C9.71784 25.688 10.2998 26.042 10.7558 26.618C11.2118 27.194 11.4398 27.854 11.4398 28.598C11.4398 29.27 11.2718 29.864 10.9358 30.38C10.6118 30.884 10.1378 31.28 9.51384 31.568C8.88984 31.856 8.15184 32 7.29984 32H1.88184V19.436H7.06584C7.91784 19.436 8.64984 19.574 9.26184 19.85C9.88584 20.126 10.3538 20.51 10.6658 21.002C10.9898 21.494 11.1518 22.052 11.1518 22.676C11.1518 23.408 10.9538 24.02 10.5578 24.512C10.1738 25.004 9.65784 25.352 9.00984 25.556ZM4.40184 24.62H6.70584C7.30584 24.62 7.76784 24.488 8.09184 24.224C8.41584 23.948 8.57784 23.558 8.57784 23.054C8.57784 22.55 8.41584 22.16 8.09184 21.884C7.76784 21.608 7.30584 21.47 6.70584 21.47H4.40184V24.62ZM6.93984 29.948C7.55184 29.948 8.02584 29.804 8.36184 29.516C8.70984 29.228 8.88384 28.82 8.88384 28.292C8.88384 27.752 8.70384 27.332 8.34384 27.032C7.98384 26.72 7.49784 26.564 6.88584 26.564H4.40184V29.948H6.93984ZM20.2522 29.606H15.2482L14.4202 32H11.7742L16.2922 19.418H19.2263L23.7443 32H21.0803L20.2522 29.606ZM19.5683 27.59L17.7502 22.334L15.9322 27.59H19.5683ZM31.013 32L28.241 27.104H27.053V32H24.533V19.436H29.249C30.221 19.436 31.049 19.61 31.733 19.958C32.417 20.294 32.927 20.756 33.263 21.344C33.611 21.92 33.785 22.568 33.785 23.288C33.785 24.116 33.545 24.866 33.065 25.538C32.585 26.198 31.871 26.654 30.923 26.906L33.929 32H31.013ZM27.053 25.214H29.159C29.843 25.214 30.353 25.052 30.689 24.728C31.025 24.392 31.193 23.93 31.193 23.342C31.193 22.766 31.025 22.322 30.689 22.01C30.353 21.686 29.843 21.524 29.159 21.524H27.053V25.214ZM42.2923 25.556C43.0003 25.688 43.5823 26.042 44.0383 26.618C44.4943 27.194 44.7223 27.854 44.7223 28.598C44.7223 29.27 44.5543 29.864 44.2183 30.38C43.8943 30.884 43.4203 31.28 42.7963 31.568C42.1723 31.856 41.4343 32 40.5823 32H35.1643V19.436H40.3483C41.2003 19.436 41.9323 19.574 42.5443 19.85C43.1683 20.126 43.6363 20.51 43.9483 21.002C44.2723 21.494 44.4343 22.052 44.4343 22.676C44.4343 23.408 44.2363 24.02 43.8403 24.512C43.4563 25.004 42.9403 25.352 42.2923 25.556ZM37.6843 24.62H39.9883C40.5883 24.62 41.0503 24.488 41.3743 24.224C41.6983 23.948 41.8603 23.558 41.8603 23.054C41.8603 22.55 41.6983 22.16 41.3743 21.884C41.0503 21.608 40.5883 21.47 39.9883 21.47H37.6843V24.62ZM40.2223 29.948C40.8343 29.948 41.3083 29.804 41.6443 29.516C41.9923 29.228 42.1663 28.82 42.1663 28.292C42.1663 27.752 41.9863 27.332 41.6263 27.032C41.2663 26.72 40.7803 26.564 40.1683 26.564H37.6843V29.948H40.2223ZM48.3507 19.436V32H45.8307V19.436H48.3507ZM60.6864 32H58.1664L52.4604 23.378V32H49.9404V19.418H52.4604L58.1664 28.058V19.418H60.6864V32ZM65.0538 25.7C65.0538 24.464 65.3298 23.36 65.8818 22.388C66.4458 21.404 67.2078 20.642 68.1678 20.102C69.1398 19.55 70.2258 19.274 71.4258 19.274C72.8298 19.274 74.0598 19.634 75.1158 20.354C76.1718 21.074 76.9098 22.07 77.3298 23.342H74.4318C74.1438 22.742 73.7358 22.292 73.2078 21.992C72.6918 21.692 72.0918 21.542 71.4078 21.542C70.6758 21.542 70.0218 21.716 69.4458 22.064C68.8818 22.4 68.4378 22.88 68.1138 23.504C67.8018 24.128 67.6458 24.86 67.6458 25.7C67.6458 26.528 67.8018 27.26 68.1138 27.896C68.4378 28.52 68.8818 29.006 69.4458 29.354C70.0218 29.69 70.6758 29.858 71.4078 29.858C72.0918 29.858 72.6918 29.708 73.2078 29.408C73.7358 29.096 74.1438 28.64 74.4318 28.04H77.3298C76.9098 29.324 76.1718 30.326 75.1158 31.046C74.0718 31.754 72.8418 32.108 71.4258 32.108C70.2258 32.108 69.1398 31.838 68.1678 31.298C67.2078 30.746 66.4458 29.984 65.8818 29.012C65.3298 28.04 65.0538 26.936 65.0538 25.7ZM87.7442 23.324C87.7442 23.996 87.5822 24.626 87.2582 25.214C86.9462 25.802 86.4482 26.276 85.7642 26.636C85.0922 26.996 84.2402 27.176 83.2082 27.176H81.1022V32H78.5822V19.436H83.2082C84.1802 19.436 85.0082 19.604 85.6922 19.94C86.3762 20.276 86.8862 20.738 87.2222 21.326C87.5702 21.914 87.7442 22.58 87.7442 23.324ZM83.1002 25.142C83.7962 25.142 84.3122 24.986 84.6482 24.674C84.9842 24.35 85.1522 23.9 85.1522 23.324C85.1522 22.1 84.4682 21.488 83.1002 21.488H81.1022V25.142H83.1002ZM92.9714 32.126C92.0954 32.126 91.3034 31.976 90.5954 31.676C89.8994 31.376 89.3474 30.944 88.9394 30.38C88.5314 29.816 88.3214 29.15 88.3094 28.382H91.0094C91.0454 28.898 91.2254 29.306 91.5494 29.606C91.8854 29.906 92.3414 30.056 92.9174 30.056C93.5054 30.056 93.9674 29.918 94.3034 29.642C94.6394 29.354 94.8074 28.982 94.8074 28.526C94.8074 28.154 94.6934 27.848 94.4654 27.608C94.2374 27.368 93.9494 27.182 93.6014 27.05C93.2654 26.906 92.7974 26.75 92.1974 26.582C91.3814 26.342 90.7154 26.108 90.1994 25.88C89.6954 25.64 89.2574 25.286 88.8854 24.818C88.5254 24.338 88.3454 23.702 88.3454 22.91C88.3454 22.166 88.5314 21.518 88.9034 20.966C89.2754 20.414 89.7974 19.994 90.4694 19.706C91.1414 19.406 91.9094 19.256 92.7734 19.256C94.0694 19.256 95.1194 19.574 95.9234 20.21C96.7394 20.834 97.1894 21.71 97.2734 22.838H94.5014C94.4774 22.406 94.2914 22.052 93.9434 21.776C93.6074 21.488 93.1574 21.344 92.5934 21.344C92.1014 21.344 91.7054 21.47 91.4054 21.722C91.1174 21.974 90.9734 22.34 90.9734 22.82C90.9734 23.156 91.0814 23.438 91.2974 23.666C91.5254 23.882 91.8014 24.062 92.1254 24.206C92.4614 24.338 92.9294 24.494 93.5294 24.674C94.3454 24.914 95.0114 25.154 95.5274 25.394C96.0434 25.634 96.4874 25.994 96.8594 26.474C97.2314 26.954 97.4174 27.584 97.4174 28.364C97.4174 29.036 97.2434 29.66 96.8954 30.236C96.5474 30.812 96.0374 31.274 95.3654 31.622C94.6934 31.958 93.8954 32.126 92.9714 32.126Z"
+                      fill="url(#paint3_linear_119_2)"
+                    />
+                  </g>
+                </g>
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_119_2"
+                    x1="47.02"
+                    y1="12"
+                    x2="47.02"
+                    y2="17.927"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#023E8A" />
+                    <stop offset="1" stop-color="#03045E" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear_119_2"
+                    x1="47.02"
+                    y1="12"
+                    x2="47.02"
+                    y2="17.927"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#023E8A" />
+                    <stop offset="1" stop-color="#03045E" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint2_linear_119_2"
+                    x1="47.0102"
+                    y1="1.41699"
+                    x2="47.0102"
+                    y2="18.6241"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0.14" stop-color="#9D0208" />
+                    <stop offset="0.605" stop-color="#E85D04" />
+                    <stop offset="1" stop-color="#FFBA08" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint3_linear_119_2"
+                    x1="49.5"
+                    y1="12"
+                    x2="49.5"
+                    y2="39"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#023E8A" />
+                    <stop offset="1" stop-color="#03045E" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </NuxtLink>
           <div class="mt-6 lg:max-w-sm">
-            <p class="text-sm text-gray-800">
+            <p class="text-sm text-gray-900">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam.
             </p>
-            <p class="mt-4 text-sm text-gray-800">
+            <p class="mt-4 text-sm text-gray-900">
               Eaque ipsa quae ab illo inventore veritatis et quasi architecto
               beatae vitae dicta sunt explicabo.
             </p>
@@ -337,7 +503,7 @@
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
             width="100%"
             height="100%"
-            style="border: 0"
+            style="border: 0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -347,7 +513,7 @@
       <div
         class="flex flex-col-reverse justify-between pt-6 pb-6 border-t lg:flex-row"
       >
-        <p class="text-sm text-gray-600">
+        <p class="text-sm text-gray-900">
           © Copyright 2020 Lorem Inc. All rights reserved.
         </p>
         <ul
@@ -356,7 +522,7 @@
           <li>
             <a
               href="/"
-              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
             >
               Plan du Site
             </a>
@@ -364,7 +530,7 @@
           <li>
             <a
               href="/"
-              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
             >
               Politique de Confidentialité
             </a>
@@ -372,7 +538,7 @@
           <li>
             <a
               href="/"
-              class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
             >
               Mentions Légales
             </a>
@@ -383,6 +549,7 @@
   </div>
 </template>
 <script>
+import { useGsap } from '#gsap'
 export default {
   data: () => ({
     showContact: false,
@@ -392,37 +559,48 @@ export default {
     openDrawer: false,
   }),
   mounted() {
-    this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", this.onScroll);
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    goToChauffage() {
+      useGsap.to(window, { duration: 0, scrollTo: '#chauffage' })
+    },
+    goToPlomberie() {
+      useGsap.to(window, { duration: 0, scrollTo: '#plomberie' })
+    },
+    goToSanitaire() {
+      useGsap.to(window, { duration: 0, scrollTo: '#sanitaire' })
+    },
+    goToTop() {
+      useGsap.to(window, { duration: 0, scrollTo: '0' })
+    },
     drawer() {
-      this.openDrawer = !this.openDrawer;
+      this.openDrawer = !this.openDrawer
     },
     contact() {
-      this.showContact = !this.showContact;
+      this.showContact = !this.showContact
     },
     onScroll() {
       if (window.pageYOffset < 0) {
-        return;
+        return
       }
       if (
         Math.abs(window.pageYOffset - this.lastScrollPosition) <
         this.scrollOffset
       ) {
-        return;
+        return
       }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
-      this.lastScrollPosition = window.pageYOffset;
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition
+      this.lastScrollPosition = window.pageYOffset
     },
   },
-};
+}
 </script>
 
-from-[#03045E] to-[#023E8A]
 <style scoped>
 .link-btn:hover {
   filter: drop-shadow(0 0 1rem #023e8a);
