@@ -615,7 +615,6 @@ export default {
         trigger: "#about",
         start: "top top",
         scrub: 4,
-
         end: "+=80%",
         toggleActions: "restart reverse none none",
       },
