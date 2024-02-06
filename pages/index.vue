@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-smooth">
-    <!-- HEADER -->
+    <!-- HEADER 
     <section
       id="header"
       class="w-full h-screen bg-fixed bg-cover bg-center flex flex-col justify-around items-center"
@@ -27,6 +27,170 @@
         class="cursor-pointer mx-auto scroll self-end rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6 hover:shadow hover:bg-[#d1d7e0]"
       ></div>
     </section>
+-->
+    <section
+      id="header"
+      class="w-full h-screen bg-fixed bg-cover bg-center relative"
+      style="background-image: url(/img/salle_de_bain.jpg);"
+    >
+ 
+      <div class="relative bg-gray-100 bg-opacity-80 h-screen">
+        
+        <div
+          class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+        >
+        
+          <div
+            class="flex flex-col items-center justify-between xl:flex-row h-screen"
+          >
+            <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+              <h1
+                class="bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md text-4xl font-semibold"
+              >
+                BARBIN CPS
+                <br />
+                Le spécialiste Chauffage Plomberie et Sanitaire
+                <br />
+                dans l'Oise et le Val d'Oise
+              </h1>
+              <p class="max-w-xl mb-4 text-base text-gray-900 md:text-lg">
+                Bienvenue chez BARBIN CPS, votre partenaire de confiance pour
+                des solutions de chauffage, plomberie et sanitaire de qualité.
+              </p>
+              <button
+                @click="contactForm()"
+                class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
+              >
+                <div
+                  class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
+                ></div>
+                <section
+                  class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative"
+                >
+                  <h1
+                    class="uppercase py-3 px-6 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-bold"
+                  >
+                    Nous contactez
+                  </h1>
+                </section>
+              </button>
+            </div>
+            <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+              <div
+                :class="{ hidden_contact_form: !showContactForm }"
+                class="contact_form overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
+              >
+                <div
+                  class="glow inset-0 w-[100px] h-[100px] absolute rotate-45"
+                ></div>
+                <section
+                  class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative p-7 sm:p-10"
+                >
+                  <h3
+                    class="mb-4 text-xl bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold sm:text-center sm:mb-6 sm:text-2xl"
+                  >
+                    Nous contactez
+                  </h3>
+                  <form>
+                    <div class="mb-1 sm:mb-2">
+                      <label
+                        for="firstName"
+                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                      >
+                        Prenom
+                      </label>
+                      <input
+                        placeholder="John"
+                        required=""
+                        type="text"
+                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                        id="firstName"
+                        name="firstName"
+                      />
+                    </div>
+                    <div class="mb-1 sm:mb-2">
+                      <label
+                        for="lastName"
+                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                      >
+                        Nom
+                      </label>
+                      <input
+                        placeholder="Doe"
+                        required=""
+                        type="text"
+                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="lastName"
+                        name="lastName"
+                      />
+                    </div>
+                    <div class="mb-1 sm:mb-2">
+                      <label
+                        for="email"
+                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                      >
+                        E-mail
+                      </label>
+                      <input
+                        placeholder="john.doe@example.org"
+                        required=""
+                        type="text"
+                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="email"
+                        name="email"
+                      />
+                    </div>
+                    <div class="mb-1 sm:mb-2">
+                      <label
+                        for="lastName"
+                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                      >
+                        Nom
+                      </label>
+                      <input
+                        placeholder="Doe"
+                        required=""
+                        type="text"
+                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="lastName"
+                        name="lastName"
+                      />
+                    </div>
+                    <div class="mb-1 sm:mb-2">
+                      <label
+                        for="lastName"
+                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                      >
+                        Nom
+                      </label>
+                      <input
+                        required=""
+                        type="text"
+                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="lastName"
+                        name="lastName"
+                      />
+                    </div>
+                    <div class="mt-4 mb-2 sm:mb-4">
+                      <button
+                        type="submit"
+                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                    <p class="text-xs text-gray-900 sm:text-sm">
+                      We respect your privacy. Unsubscribe at any time.
+                    </p>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- A PROPOS / CONTACT I -->
     <section
       id="about"
@@ -600,52 +764,52 @@
 </template>
 
 <script>
-import { useGsap } from "#gsap";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useGsap } from '#gsap'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 export default {
   mounted() {
     // ANIMATION ABOUT
     var tlAbout = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#about",
-        start: "top top",
+        trigger: '#about',
+        start: 'top top',
         scrub: 4,
-        end: "+=80%",
-        toggleActions: "restart reverse none none",
+        end: '+=80%',
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlAbout
       .fromTo(
-        "#title_about",
+        '#title_about',
         { x: 100, y: 100, duration: 0, opacity: 0, scale: 1.5 },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#text1_about",
+        '#text1_about',
         { x: -100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#text2_about",
+        '#text2_about',
         { x: -100, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#image_about",
+        '#image_about',
         { x: 100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#text3_about",
+        '#text3_about',
         { x: 0, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
-      .fromTo("#cta_about", { opacity: 0 }, { duration: 3, opacity: 1 });
+      .fromTo('#cta_about', { opacity: 0 }, { duration: 3, opacity: 1 })
     //
 
     // ANIMATION CHAUFFAGE
@@ -1230,7 +1394,10 @@ export default {
 
   methods: {
     goToAbout() {
-      useGsap.to(window, { duration: 0, scrollTo: "#about" });
+      useGsap.to(window, { duration: 0, scrollTo: '#about' })
+    },
+    contactForm() {
+      this.showContactForm = true
     },
   },
   components: {
@@ -1238,186 +1405,216 @@ export default {
     SwiperSlide,
   },
   setup() {
-    return { modules: [Autoplay, Pagination, Navigation] };
+    return { modules: [Autoplay, Pagination, Navigation] }
   },
   data() {
     return {
+      showContactForm: false,
       partenaires: [
         {
-          nom: "Frisquet",
-          img: "/img/logo/frisquet.png",
-          lien: "https://www.frisquet.fr",
+          nom: 'Frisquet',
+          img: '/img/logo/frisquet.png',
+          lien: 'https://www.frisquet.fr',
           id: 1,
         },
         {
-          nom: "De Dietrich",
-          img: "/img/logo/dedietrich.png",
-          lien: "https://www.dedietrich.org",
+          nom: 'De Dietrich',
+          img: '/img/logo/dedietrich.png',
+          lien: 'https://www.dedietrich.org',
           id: 2,
         },
         {
-          nom: "Viessmann",
-          img: "/img/logo/viessmann.png",
-          lien: "https://www.viessmann.fr/",
+          nom: 'Viessmann',
+          img: '/img/logo/viessmann.png',
+          lien: 'https://www.viessmann.fr/',
           id: 3,
         },
         {
-          nom: "ELM Leblanc",
-          img: "/img/logo/ELM.png",
-          lien: "https://elmleblanc.fr",
+          nom: 'ELM Leblanc',
+          img: '/img/logo/ELM.png',
+          lien: 'https://elmleblanc.fr',
           id: 4,
         },
         {
-          nom: "Chappee",
-          img: "/img/logo/chappee.png",
-          lien: "https://www.chappee.fr",
+          nom: 'Chappee',
+          img: '/img/logo/chappee.png',
+          lien: 'https://www.chappee.fr',
           id: 4,
         },
         {
-          nom: "Atlantic",
-          img: "/img/logo/atlantic.png",
-          lien: "https://www.atlantic.fr",
+          nom: 'Atlantic',
+          img: '/img/logo/atlantic.png',
+          lien: 'https://www.atlantic.fr',
           id: 5,
         },
         {
-          nom: "Acova",
-          img: "/img/logo/acova.png",
-          lien: "https://www.acova.fr",
+          nom: 'Acova',
+          img: '/img/logo/acova.png',
+          lien: 'https://www.acova.fr',
           id: 6,
         },
         {
-          nom: "Grohe",
-          img: "/img/logo/grohe.png",
-          lien: "https://www.grohe.fr",
+          nom: 'Grohe',
+          img: '/img/logo/grohe.png',
+          lien: 'https://www.grohe.fr',
           id: 7,
         },
         {
-          nom: "Hansgrohe",
-          img: "/img/logo/hansgrohe.png",
-          lien: "https://www.hansgrohe.fr",
+          nom: 'Hansgrohe',
+          img: '/img/logo/hansgrohe.png',
+          lien: 'https://www.hansgrohe.fr',
           id: 8,
         },
         {
-          nom: "Toto",
-          img: "/img/logo/toto.png",
-          lien: "https://www.toto.fr",
+          nom: 'Toto',
+          img: '/img/logo/toto.png',
+          lien: 'https://www.toto.fr',
           id: 9,
         },
         {
-          nom: "Franke",
-          img: "/img/logo/franke.png",
-          lien: "https://www.franke.fr",
+          nom: 'Franke',
+          img: '/img/logo/franke.png',
+          lien: 'https://www.franke.fr',
           id: 10,
         },
         {
-          nom: "Nicoll",
-          img: "/img/logo/nicoll.png",
-          lien: "https://www.nicoll.fr",
+          nom: 'Nicoll',
+          img: '/img/logo/nicoll.png',
+          lien: 'https://www.nicoll.fr',
           id: 11,
         },
         {
-          nom: "Allia",
-          img: "/img/logo/allia.png",
-          lien: "https://www.allia.fr",
+          nom: 'Allia',
+          img: '/img/logo/allia.png',
+          lien: 'https://www.allia.fr',
           id: 12,
         },
         {
-          nom: "Geberit",
-          img: "/img/logo/geberit.png",
-          lien: "https://www.geberit.fr",
+          nom: 'Geberit',
+          img: '/img/logo/geberit.png',
+          lien: 'https://www.geberit.fr',
           id: 13,
         },
       ],
       certifications: [
         {
-          nom: "Reconnu Garant de l’Environnement",
-          img: "/img/logo/rge.png",
-          lien: "https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge",
+          nom: 'Reconnu Garant de l’Environnement',
+          img: '/img/logo/rge.png',
+          lien:
+            'https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge',
           id: 1,
         },
         {
-          nom: "Qualibat",
-          img: "/img/logo/qualibat.png",
-          lien: "/",
+          nom: 'Qualibat',
+          img: '/img/logo/qualibat.png',
+          lien: '/',
           id: 2,
         },
         {
-          nom: "Professionnel du Gaz",
-          img: "/img/logo/pg.png",
-          lien: "https://lesprofessionnelsdugaz.com/pg/18653",
+          nom: 'Professionnel du Gaz',
+          img: '/img/logo/pg.png',
+          lien: 'https://lesprofessionnelsdugaz.com/pg/18653',
           id: 3,
         },
       ],
       chaudieres: [
         {
-          nom: "Chaudière Viessmann",
-          img: "/img/chaudiere_viessmann.jpg",
-          lien: "https://www.viessmann.fr",
+          nom: 'Chaudière Viessmann',
+          img: '/img/chaudiere_viessmann.jpg',
+          lien: 'https://www.viessmann.fr',
           id: 1,
         },
         {
-          nom: "Chaudière Frisquet",
-          img: "/img/chaudiere_frisquet.jpg",
-          lien: "https://www.frisquet.fr",
+          nom: 'Chaudière Frisquet',
+          img: '/img/chaudiere_frisquet.jpg',
+          lien: 'https://www.frisquet.fr',
           id: 2,
         },
         {
-          nom: "Chaudière De Dietrich",
-          img: "/img/chaudiere_dedietrich.jpg",
-          lien: "https://www.dedietrich-thermique.fr",
+          nom: 'Chaudière De Dietrich',
+          img: '/img/chaudiere_dedietrich.jpg',
+          lien: 'https://www.dedietrich-thermique.fr',
           id: 3,
         },
         {
-          nom: "Chaudière Chappee",
-          img: "/img/chaudiere_chappee.jpg",
-          lien: "https://www.chappee.com",
+          nom: 'Chaudière Chappee',
+          img: '/img/chaudiere_chappee.jpg',
+          lien: 'https://www.chappee.com',
           id: 4,
         },
         {
-          nom: "Chaudière ELM Leblanc",
-          img: "/img/chaudiere_ELM_Leblanc.jpg",
-          lien: "https://www.elmleblanc.fr",
+          nom: 'Chaudière ELM Leblanc',
+          img: '/img/chaudiere_ELM_Leblanc.jpg',
+          lien: 'https://www.elmleblanc.fr',
           id: 5,
         },
       ],
       sdbs: [
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette1.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette1.jpg',
           id: 1,
         },
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette2.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette2.jpg',
           id: 2,
         },
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette3.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette3.jpg',
           id: 3,
         },
         {
-          nom: "Salle de bain",
-          img: "/img/salle_de_bain1.jpg",
+          nom: 'Salle de bain',
+          img: '/img/salle_de_bain1.jpg',
           id: 4,
         },
         {
-          nom: "Carrelage de douche",
-          img: "/img/carrelage_douche.jpg",
+          nom: 'Carrelage de douche',
+          img: '/img/carrelage_douche.jpg',
           id: 5,
         },
         {
-          nom: "Toilette avec accès handicapé",
-          img: "/img/toilette_handicap.jpg",
+          nom: 'Toilette avec accès handicapé',
+          img: '/img/toilette_handicap.jpg',
           id: 6,
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style>
+.contact_form {
+  transform: translateX(0);
+  transition: transform 300ms linear;
+}
+
+.contact_form.hidden_contact_form {
+  transform: translateX(200%);
+}
+.glow-btn {
+  animation: move 5000ms linear infinite;
+  offset-path: rect(0 100% 100% 0 round 20px);
+  background: radial-gradient(#fff, #fff, transparent);
+}
+.glow {
+  animation: move 5000ms linear infinite;
+  offset-path: rect(0 100% 100% 0 round 20px);
+  background: radial-gradient(#fff, #fff, transparent);
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
 .scroll {
   width: 60px;
   height: 60px;
@@ -1427,7 +1624,7 @@ export default {
   animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 15px;
     left: 18px;

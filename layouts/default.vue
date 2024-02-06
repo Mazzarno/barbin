@@ -584,6 +584,7 @@ export default {
     contact() {
       this.showContact = !this.showContact
     },
+
     onScroll() {
       if (window.pageYOffset < 0) {
         return
@@ -602,10 +603,6 @@ export default {
 </script>
 
 <style scoped>
-.link-btn:hover {
-  filter: drop-shadow(0 0 1rem #023e8a);
-}
-
 .hidden-contact {
   display: none;
 }
