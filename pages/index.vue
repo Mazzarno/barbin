@@ -1,48 +1,161 @@
 <template>
   <div class="scroll-smooth">
-    <!-- HEADER 
-    <section
-      id="header"
-      class="w-full h-screen bg-fixed bg-cover bg-center flex flex-col justify-around items-center"
-      style="background-image: url(/img/salle_de_bain.jpg)"
+    <!-- CONTACT FORM -->
+    <div
+      :class="showForm ? 'contact_form-open' : 'contact_form-close'"
+      v-if="showForm"
+      class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
     >
-      <div></div>
       <div
-        id="title"
-        class="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl text-center"
+        class="relative w-auto my-6 mx-auto max-w-6xl overflow-hidden rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
       >
-        <h1
-          class="p-5 tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] opacity-80 drop-shadow-md text-4xl font-semibold"
+        <!--content-->
+        <div
+          class="rounded-lg shadow-lg relative flex flex-col w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl outline-none focus:outline-none"
         >
-          BARBIN CPS
-          <br />
-          Le spécialiste Chauffage Plomberie et Sanitaire
-          <br />
-          dans l'Oise et le Val d'Oise
-        </h1>
+          <!--header-->
+          <div
+            class="flex items-start justify-between p-5 border-b border-solid border-[#E5EBF3] border-opacity-40 rounded-t"
+          >
+            <h3
+              class="text-xl bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold sm:text-center sm:text-2xl"
+            >
+              Nous contactez
+            </h3>
+            <button
+              class="p-1 ml-auto bg-transparent border-0 text-[#03045E] float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+              v-on:click="toggleForm()"
+            >
+              <span
+                class="bg-transparent text-[#03045E] h-6 w-6 text-2xl block outline-none focus:outline-none"
+              >
+                ×
+              </span>
+            </button>
+          </div>
+          <!--body-->
+          <div
+            class="overflow-hidden relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
+          >
+            <section class="inline-block w-full relative p-5 sm:p-10">
+              <form>
+                <div class="mb-1 sm:mb-2">
+                  <label
+                    for="firstName"
+                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                  >
+                    Nom / Prenom
+                  </label>
+                  <input
+                    placeholder="Léon Dupond"
+                    required=""
+                    type="text"
+                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                    id="firstName"
+                    name="firstName"
+                  />
+                </div>
+                <div class="mb-1 sm:mb-2">
+                  <label
+                    for="lastName"
+                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                  >
+                    Nom
+                  </label>
+                  <input
+                    placeholder="Doe"
+                    required=""
+                    type="text"
+                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                    id="lastName"
+                    name="lastName"
+                  />
+                </div>
+                <div class="mb-1 sm:mb-2">
+                  <label
+                    for="email"
+                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                  >
+                    E-mail
+                  </label>
+                  <input
+                    placeholder="leon.dupont@example.fr"
+                    required=""
+                    type="text"
+                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+                <div class="mb-1 sm:mb-2">
+                  <label
+                    for="lastName"
+                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                  >
+                    Nom
+                  </label>
+                  <input
+                    placeholder="Doe"
+                    required=""
+                    type="text"
+                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                    id="lastName"
+                    name="lastName"
+                  />
+                </div>
+                <div class="mb-1 sm:mb-2">
+                  <label
+                    for="lastName"
+                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
+                  >
+                    Nom
+                  </label>
+                  <input
+                    required=""
+                    type="text"
+                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
+                    id="lastName"
+                    name="lastName"
+                  />
+                </div>
+                <div class="mt-4 mb-2 sm:mb-4">
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <p class="text-xs text-gray-900 sm:text-sm">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </form>
+            </section>
+          </div>
+        </div>
       </div>
-      <div
-        @click="goToAbout"
-        id="scroll"
-        class="cursor-pointer mx-auto scroll self-end rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6 hover:shadow hover:bg-[#d1d7e0]"
-      ></div>
-    </section>
--->
+    </div>
+    <div v-if="showForm" class="opacity-30 fixed inset-0 z-40 bg-black"></div>
+
+    <!-- HEADER / CTA CONTACT I -->
     <section
       id="header"
       class="w-full h-screen bg-fixed bg-cover bg-center relative"
       style="background-image: url(/img/salle_de_bain.jpg);"
     >
- 
+      <div class="absolute bottom-5 z-10 left-1/2 transform -translate-x-1/2">
+        <div
+          @click="goToAbout"
+          id="scroll"
+          class="cursor-pointer mx-auto scroll rounded-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-2xl text-center p-6 hover:shadow hover:bg-[#d1d7e0]"
+        ></div>
+      </div>
+
       <div class="relative bg-gray-100 bg-opacity-80 h-screen">
-        
         <div
           class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
         >
-        
-          <div
-            class="flex flex-col items-center justify-between xl:flex-row h-screen"
-          >
+          <div class="flex items-center justify-between flex-row h-screen">
             <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
               <h1
                 class="bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md text-4xl font-semibold"
@@ -58,13 +171,13 @@
                 des solutions de chauffage, plomberie et sanitaire de qualité.
               </p>
               <button
-                @click="contactForm()"
+                @click="toggleForm()"
                 class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
               >
                 <div
                   class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
                 ></div>
-                <section
+                <div
                   class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative"
                 >
                   <h1
@@ -72,126 +185,15 @@
                   >
                     Nous contactez
                   </h1>
-                </section>
+                </div>
               </button>
             </div>
-            <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
-              <div
-                :class="{ hidden_contact_form: !showContactForm }"
-                class="contact_form overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
-              >
-                <div
-                  class="glow inset-0 w-[100px] h-[100px] absolute rotate-45"
-                ></div>
-                <section
-                  class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative p-7 sm:p-10"
-                >
-                  <h3
-                    class="mb-4 text-xl bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold sm:text-center sm:mb-6 sm:text-2xl"
-                  >
-                    Nous contactez
-                  </h3>
-                  <form>
-                    <div class="mb-1 sm:mb-2">
-                      <label
-                        for="firstName"
-                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                      >
-                        Prenom
-                      </label>
-                      <input
-                        placeholder="John"
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                        id="firstName"
-                        name="firstName"
-                      />
-                    </div>
-                    <div class="mb-1 sm:mb-2">
-                      <label
-                        for="lastName"
-                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                      >
-                        Nom
-                      </label>
-                      <input
-                        placeholder="Doe"
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                        id="lastName"
-                        name="lastName"
-                      />
-                    </div>
-                    <div class="mb-1 sm:mb-2">
-                      <label
-                        for="email"
-                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                      >
-                        E-mail
-                      </label>
-                      <input
-                        placeholder="john.doe@example.org"
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                        id="email"
-                        name="email"
-                      />
-                    </div>
-                    <div class="mb-1 sm:mb-2">
-                      <label
-                        for="lastName"
-                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                      >
-                        Nom
-                      </label>
-                      <input
-                        placeholder="Doe"
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                        id="lastName"
-                        name="lastName"
-                      />
-                    </div>
-                    <div class="mb-1 sm:mb-2">
-                      <label
-                        for="lastName"
-                        class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                      >
-                        Nom
-                      </label>
-                      <input
-                        required=""
-                        type="text"
-                        class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                        id="lastName"
-                        name="lastName"
-                      />
-                    </div>
-                    <div class="mt-4 mb-2 sm:mb-4">
-                      <button
-                        type="submit"
-                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      >
-                        Subscribe
-                      </button>
-                    </div>
-                    <p class="text-xs text-gray-900 sm:text-sm">
-                      We respect your privacy. Unsubscribe at any time.
-                    </p>
-                  </form>
-                </section>
-              </div>
-            </div>
+            <div></div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- A PROPOS / CONTACT I -->
+    <!-- A PROPOS / CTA CONTACT II -->
     <section
       id="about"
       class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
@@ -231,7 +233,6 @@
           />
         </div>
       </div>
-
       <div class="flex items-center justify-center mt-6">
         <p
           id="text3_about"
@@ -242,19 +243,29 @@
         </p>
       </div>
       <div class="flex items-center justify-center mt-6">
-        <a
-          id="cta_about"
-          href="/"
-          class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-opacity-90 backdrop-blur-xl drop-shadow-4xl shadow-2xl bg-[#03045E] hover:bg-[#023E8A] hover:shadow"
+        <button
+          @click="toggleForm()"
+          class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
         >
-          Contactez nous
-        </a>
+          <div
+            class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
+          ></div>
+          <div
+            class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative"
+          >
+            <h1
+              class="uppercase py-3 px-6 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-bold"
+            >
+              Nous contactez
+            </h1>
+          </div>
+        </button>
       </div>
     </section>
     <!-- CHAUFFAGE -->
     <section
       id="chauffage"
-      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
     >
       <h5
         id="title_chauffage"
@@ -399,7 +410,7 @@
     <!-- CERTIFICATIONS -->
     <section
       id="certifications"
-      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
     >
       <h5
         id="title_certifications"
@@ -474,7 +485,7 @@
     <!-- PLOMBERIE -->
     <section
       id="plomberie"
-      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20"
+      class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
     >
       <h5
         id="title_plomberie"
@@ -485,12 +496,12 @@
       <div class="grid gap-10 lg:grid-cols-2">
         <div>
           <h6
-            id="block_title1_plomberie"
+            id="block1_title_plomberie"
             class="mb-2 text-lg font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
           >
             Installation et rénovation
           </h6>
-          <p id="block_text1_plomberie" class="text-lg text-gray-900">
+          <p id="block1_text_plomberie" class="text-lg text-gray-900">
             Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
             la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
             assurant un fonctionnement fiable. De plus, cette pratique permet
@@ -498,12 +509,12 @@
             énergie.
           </p>
           <h6
-            id="block_title2_plomberie"
+            id="block2_title_plomberie"
             class="mb-2 mt-5 text-lg font-semibold leading-5 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E]"
           >
             Intervention d'urgence et réparation
           </h6>
-          <p id="block_text2_plomberie" class="text-lg text-gray-900">
+          <p id="block2_text_plomberie" class="text-lg text-gray-900">
             Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
             la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
             assurant un fonctionnement fiable. De plus, cette pratique permet
@@ -544,7 +555,7 @@
     <!-- PARTENAIRES -->
     <section
       id="partenaires"
-      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
     >
       <h5
         id="title_partenaires"
@@ -619,7 +630,7 @@
     <!-- SANITAIRE -->
     <section
       id="sanitaire"
-      class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+      class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
     >
       <h5
         id="title_sanitaire"
@@ -755,11 +766,26 @@
           </div>
         </div>
       </div>
+      <div class="flex items-center justify-center mt-6">
+        <p
+          id="text3_about"
+          class="text-lg font-bold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent"
+        >
+          Besoin d'une intervention d'urgence, d'un devis gratuit ou vous voulez
+          simplement prendre un rendez-vous ?
+        </p>
+      </div>
+      <div class="flex items-center justify-center mt-6">
+        <a
+          id="cta_about"
+          href="/"
+          class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-opacity-90 backdrop-blur-xl drop-shadow-4xl shadow-2xl bg-[#03045E] hover:bg-[#023E8A] hover:shadow"
+        >
+          Contactez nous
+        </a>
+      </div>
     </section>
-    <!-- CONTACT II -->
-    <section
-      class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
-    ></section>
+    <!-- CONTACT III -->
   </div>
 </template>
 
@@ -777,16 +803,16 @@ export default {
     var tlAbout = useGsap.timeline({
       scrollTrigger: {
         trigger: '#about',
-        start: 'top top',
-        scrub: 4,
-        end: '+=80%',
+        start: 'top 80%',
+        scrub: 1,
+        end: () => '+=' + document.querySelector('#about').offsetHeight * 0.8,
         toggleActions: 'restart reverse none none',
       },
     })
     tlAbout
       .fromTo(
         '#title_about',
-        { x: 100, y: 100, duration: 0, opacity: 0, scale: 1.5 },
+        { x: -100, y: -100, duration: 0, opacity: 0, scale: 1.5 },
         { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
@@ -809,595 +835,311 @@ export default {
         { x: 0, y: 100, duration: 0, opacity: 0 },
         { x: 0, y: 0, duration: 3, opacity: 1 },
       )
-      .fromTo('#cta_about', { opacity: 0 }, { duration: 3, opacity: 1 })
-    //
-
+      .fromTo('#cta_about', { opacity: 0 }, { duration: 1, opacity: 1 })
     // ANIMATION CHAUFFAGE
+    var tlChauffage = useGsap.timeline({
+      scrollTrigger: {
+        trigger: '#chauffage',
+        start: 'top 90%',
+        scrub: 1,
+        end: () =>
+          '+=' + document.querySelector('#chauffage').offsetHeight * 0.8,
+        toggleActions: 'restart reverse none none',
+      },
+    })
+    tlChauffage
+      .fromTo(
+        '#title_chauffage',
+        {
+          x: -100,
+          y: -100,
+          scale: 1.5,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#bg_chauffage',
+        {
+          x: 0,
+          y: -10,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_logo_chauffage, #block2_logo_chauffage, #block4_logo_chauffage, #block4_logo_chauffage',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_title_chauffage, #block2_title_chauffage, #block3_title_chauffage, #block4_title_chauffage',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_chauffage',
+        {
+          x: 10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_text_chauffage, #block2_text_chauffage, #block3_text_chauffage, #block4_text_chauffage',
+        {
+          x: -10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
 
-    /*
-    
+    //ANIMATION CERTIFICATION
+    var tlPCertifications = useGsap.timeline({
+      scrollTrigger: {
+        trigger: '#certifications',
+        start: 'top 90%',
+        scrub: 1,
+        end: () =>
+          '+=' + document.querySelector('#certifications').offsetHeight,
+        toggleActions: 'restart reverse none none',
+      },
+    })
+    tlPCertifications
+      .fromTo(
+        '#title_certifications',
+        {
+          x: -100,
+          y: -100,
+          scale: 1.5,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_certifications',
+        {
+          x: -100,
+          y: 0,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1 },
+      )
 
-    tl.Chauffage
-      .to("#title_c hauffage" , {
-        x: -10,
-        y: -10,
-        scale: 3,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#bg_chauffage", {
-        x: 0,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_logo_chauffage", {
-        x: -10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_title_chauffage", {
-        x: -10,
-        y: -10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_text_chauffage", {
-        x: -10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_logo_chauffage", {
-        x: 10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_title_chauffage", {
-        x: 10,
-        y: -10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_text_chauffage", {
-        x: 10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_logo_chauffage", {
-        x: -10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_title_chauffage", {
-        x: -10,
-        y: 10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_text_chauffage", {
-        x: -10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_logo_chauffage", {
-        x: 10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_title_chauffage", {
-        x: 10,
-        y: 10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_text_chauffage", {
-        x: 10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image_chauffage", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      //ANIMATION
-      .to("#title_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#bg_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#block1_logo_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block1_title_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block1_text_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_logo_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_title_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_text_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image_chauffage", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#block3_logo_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block3_title_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block3_text_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_logo_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_title_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_text_chauffage", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      });
-    /*
     //ANIMATION PARTENAIRES
-    let tlPartenaire = useGsap.timeline({
+    var tlPartenaires = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#partenaires",
-        scrub: 4,
-        start: "top 80%",
-        endTrigger: "#image_partenaires",
-        end: "top 50%",
-        markers: true,
-        toggleActions: "restart reverse none none",
+        trigger: '#partenaires',
+        start: 'top 90%',
+        scrub: 1,
+        end: () => '+=' + document.querySelector('#partenaires').offsetHeight,
+
+        toggleActions: 'restart reverse none none',
       },
-    }); //SETUP PARTENAIRE
-    tlPartenaire
-      .to("#title_partenaires", {
-        x: -10,
-        y: -10,
-        scale: 3,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image_partenaires", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#title_partenaires", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image_partenaires", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      });
-    //ANIMATION PLOMBERIE
-    let tlPlomberie = useGsap.timeline({
+    })
+    tlPartenaires
+      .fromTo(
+        '#title_partenaires',
+        {
+          x: -100,
+          y: -100,
+          scale: 1.5,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_partenaires',
+        {
+          x: -100,
+          y: 0,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1 },
+      )
+    // ANIMATION PLOMBERIE
+
+    var tlPlomberie = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#plomberie",
-        scrub: 4,
-        start: "top 80%",
-        endTrigger: "#image2_plomberie",
-        end: "top 50%",
-        markers: true,
-        toggleActions: "restart reverse none none",
+        trigger: '#plomberie',
+        start: 'top 90%',
+        scrub: 1,
+        end: () =>
+          '+=' + document.querySelector('#plomberie').offsetHeight * 0.8,
+
+        toggleActions: 'restart reverse none none',
       },
-    }); //SETUP PLOMBERIE
+    })
     tlPlomberie
-      .to("#title_plomberie", {
-        x: -10,
-        y: -10,
-        scale: 3,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block_title1_plomberie", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block_text1_plomberie", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block_title2_plomberie", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block_text2_plomberie", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image1_plomberie", {
-        x: -10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image2_plomberie", {
-        x: -10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image3_plomberie", {
-        x: -10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      //ANIMATE
-      .to("#title_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block_title1_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block_text1_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image1_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image2_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image3_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block_title2_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block_text2_plomberie", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      });
-
+      .fromTo(
+        '#title_plomberie',
+        {
+          x: -100,
+          y: -100,
+          scale: 1.5,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#block1_title_plomberie, #block2_title_plomberie ',
+        {
+          x: -100,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image1_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image3_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image2_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#block1_text_plomberie, #block2_text_plomberie ',
+        {
+          x: -100,
+          opacity: 0,
+        },
+        { x: 0, duration: 3, opacity: 1 },
+      )
     // ANIMATION SANITAIRE
-    let tlSanitaire = useGsap.timeline({
+
+    var tlSanitaire = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#sanitaire",
-        scrub: 4,
-        start: "top 80%",
-        endTrigger: "#image_sanitaire",
-        end: "top 50%",
-        markers: true,
-        toggleActions: "restart reverse none none",
+        trigger: '#sanitaire',
+        start: 'top 90%',
+        scrub: 1,
+        end: () =>
+          '+=' + document.querySelector('#sanitaire').offsetHeight * 0.8,
+        toggleActions: 'restart reverse none none',
       },
-    });
-
+    })
     tlSanitaire
-      //SETUP SANITAIRE
-      .to("#title_sanitaire", {
-        x: -10,
-        y: -10,
-        scale: 3,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#bg_sanitaire", {
-        x: 0,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_logo_sanitaire", {
-        x: -10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_title_sanitaire", {
-        x: -10,
-        y: -10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block1_text_sanitaire", {
-        x: -10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_logo_sanitaire", {
-        x: 10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_title_sanitaire", {
-        x: 10,
-        y: -10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block2_text_sanitaire", {
-        x: 10,
-        y: -10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_logo_sanitaire", {
-        x: -10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_title_sanitaire", {
-        x: -10,
-        y: 10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block3_text_sanitaire", {
-        x: -10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_logo_sanitaire", {
-        x: 10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_title_sanitaire", {
-        x: 10,
-        y: 10,
-        scale: 1.5,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#block4_text_sanitaire", {
-        x: 10,
-        y: 10,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      .to("#image_sanitaire", {
-        x: 10,
-        y: 0,
-        scale: 1,
-        duration: 0,
-        opacity: 0,
-      })
-      //ANIMATION
-      .to("#title_sanitaire", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#bg_sanitaire", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#block1_logo_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block1_title_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block1_text_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_logo_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_title_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block2_text_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#image_sanitaire", { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 })
-      .to("#block3_logo_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block3_title_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block3_text_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_logo_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_title_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      })
-      .to("#block4_text_sanitaire", {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 3,
-        opacity: 1,
-      });
-
-      */
+      .fromTo(
+        '#title_sanitaire',
+        {
+          x: -100,
+          y: -100,
+          scale: 1.5,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#bg_sanitaire',
+        {
+          x: 0,
+          y: -10,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_logo_sanitaire, #block2_logo_sanitaire, #block4_logo_sanitaire, #block4_logo_sanitaire',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_title_sanitaire, #block2_title_sanitaire, #block3_title_sanitaire, #block4_title_sanitaire',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_sanitaire',
+        {
+          x: 10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block1_text_sanitaire, #block2_text_sanitaire, #block3_text_sanitaire, #block4_text_sanitaire',
+        {
+          x: -10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
   },
 
   methods: {
     goToAbout() {
       useGsap.to(window, { duration: 0, scrollTo: '#about' })
     },
-    contactForm() {
-      this.showContactForm = true
+    toggleForm() {
+      this.showForm = !this.showForm
     },
   },
   components: {
@@ -1409,7 +1151,7 @@ export default {
   },
   data() {
     return {
-      showContactForm: false,
+      showForm: false,
       partenaires: [
         {
           nom: 'Frisquet',
@@ -1588,13 +1330,15 @@ export default {
 
 <style>
 .contact_form {
-  transform: translateX(0);
-  transition: transform 300ms linear;
+  transition: all 330ms ease-out;
+}
+.contact_form-open {
+  transform: translateX(0%);
+}
+.contact_form-close {
+  transform: translateX(-100%);
 }
 
-.contact_form.hidden_contact_form {
-  transform: translateX(200%);
-}
 .glow-btn {
   animation: move 5000ms linear infinite;
   offset-path: rect(0 100% 100% 0 round 20px);
