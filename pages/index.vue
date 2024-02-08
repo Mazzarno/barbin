@@ -41,35 +41,49 @@
               <form>
                 <div class="mb-1 sm:mb-2">
                   <label
-                    for="firstName"
+                    for="nom"
                     class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
                   >
-                    Nom / Prenom
+                    Nom / Prénom
                   </label>
-                  <input
-                    placeholder="Léon Dupond"
-                    required=""
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                    id="firstName"
-                    name="firstName"
-                  />
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <i
+                        class="mdi mdi-account-outline text-gray-600 mdi-18px"
+                      ></i>
+                    </div>
+                    <input
+                      type="name"
+                      id="name"
+                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
+                      placeholder="Léon Dupont"
+                    />
+                  </div>
                 </div>
                 <div class="mb-1 sm:mb-2">
                   <label
-                    for="lastName"
+                    for="telephone"
                     class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
                   >
-                    Nom
+                    Téléphone
                   </label>
-                  <input
-                    placeholder="Doe"
-                    required=""
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                    id="lastName"
-                    name="lastName"
-                  />
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <i
+                        class="mdi mdi-phone-outline text-gray-600 mdi-18px"
+                      ></i>
+                    </div>
+                    <input
+                      type="tel"
+                      id="tel"
+                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
+                      placeholder="06.07.89.01.49"
+                    />
+                  </div>
                 </div>
                 <div class="mb-1 sm:mb-2">
                   <label
@@ -78,57 +92,109 @@
                   >
                     E-mail
                   </label>
-                  <input
-                    placeholder="leon.dupont@example.fr"
-                    required=""
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                    id="email"
-                    name="email"
-                  />
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <i
+                        class="mdi mdi-email-outline text-gray-600 mdi-18px"
+                      ></i>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
+                      placeholder="name@flowbite.com"
+                    />
+                  </div>
                 </div>
                 <div class="mb-1 sm:mb-2">
                   <label
-                    for="lastName"
+                    for="email"
                     class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
                   >
-                    Nom
+                    Adresse
                   </label>
-                  <input
-                    placeholder="Doe"
-                    required=""
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                    id="lastName"
-                    name="lastName"
-                  />
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <i class="mdi mdi-map-outline text-gray-600 mdi-18px"></i>
+                    </div>
+                    <input
+                      type="adresse"
+                      id="adresse"
+                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
+                      placeholder="16 rue du Général Leclerc, 60260 LAMORLAYE"
+                    />
+                  </div>
                 </div>
                 <div class="mb-1 sm:mb-2">
                   <label
-                    for="lastName"
+                    for="email"
                     class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
                   >
-                    Nom
+                    Demande
                   </label>
-                  <input
-                    required=""
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#E5EBF3] backdrop-blur-xl rounded-xl drop-shadow-4xl shadow-2xl border border-gray-300 appearance-none focus:outline-none focus:shadow-outline"
-                    id="lastName"
-                    name="lastName"
-                  />
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                    >
+                      <i
+                        class="mdi mdi-wrench-outline text-gray-600 mdi-18px"
+                      ></i>
+                    </div>
+                    <select
+                      id="demande"
+                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
+                    >
+                      <option>Entretien de chaudière</option>
+                      <option>Intervention plomberie</option>
+                      <option>Intervention chauffage</option>
+                      <option>Autres</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="mt-4 mb-2 sm:mb-4">
+                <div class="flex items-center mb-4">
+                  <input
+                    id="checkbox-1"
+                    type="checkbox"
+                    value=""
+                    class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded"
+                  />
+                  <label
+                    for="checkbox-1"
+                    class="ms-2 text-sm font-medium text-gray-800"
+                  >
+                    J'accepte la
+                    <nuxt-link
+                      to="/politique_de_confidentialité"
+                      class="text-[#03045E] hover:underline"
+                    >
+                      politique de confidentialité
+                    </nuxt-link>
+                    du site.
+                  </label>
+                </div>
+                <div class="mt-4 mb-2">
                   <button
-                    type="submit"
-                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    @click="toggleForm()"
+                    class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg inline-flex items-center justify-center w-full"
                   >
-                    Subscribe
+                    <div
+                      class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
+                    ></div>
+                    <div
+                      class="inline-block w-full bg-[#03045E] bg-opacity-80 backdrop-blur-xl rounded-md z-10 relative"
+                    >
+                      <h1
+                        class="uppercase py-3 px-6 text-gray-100 hover:text-gray-300 drop-shadow-md font-bold"
+                      >
+                        Envoyer
+                      </h1>
+                    </div>
                   </button>
                 </div>
-                <p class="text-xs text-gray-900 sm:text-sm">
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
               </form>
             </section>
           </div>
@@ -136,7 +202,7 @@
       </div>
     </div>
     <div v-if="showForm" class="opacity-30 fixed inset-0 z-40 bg-black"></div>
-
+    -->
     <!-- HEADER / CTA CONTACT I -->
     <section
       id="header"
@@ -178,10 +244,10 @@
                   class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
                 ></div>
                 <div
-                  class="inline-block w-full bg-[#E5EBF3] bg-opacity-40 backdrop-blur-xl rounded-md z-10 relative"
+                  class="inline-block w-full bg-[#03045E] bg-opacity-80 backdrop-blur-xl rounded-md z-10 relative"
                 >
                   <h1
-                    class="uppercase py-3 px-6 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-bold"
+                    class="uppercase py-3 px-6 text-gray-100 hover:text-gray-300 drop-shadow-md font-bold"
                   >
                     Nous contactez
                   </h1>
@@ -1141,6 +1207,23 @@ export default {
     toggleForm() {
       this.showForm = !this.showForm
     },
+    sendEmail() {
+      this.$mail.send({
+        from: this.contactFormNom,
+        subject: `Message du site web` + this.contactFormDemande,
+        text:
+          this.contactFormNom +
+          ` habitant au ` +
+          contactFormAdresse +
+          ` vous à envoyer un message via le site web barbincps.fr concernant ` +
+          this.contactFormDemande +
+          `.` +
+          ` Email : ` +
+          this.contactFormEmail +
+          `Téléphone : ` +
+          this.contactFormTel,
+      })
+    },
   },
   components: {
     Swiper,
@@ -1151,6 +1234,12 @@ export default {
   },
   data() {
     return {
+      contactFormNom: null,
+      contactFormTel: null,
+      contactFormEmail: null,
+      contactFormAdresse: null,
+      contactFormName: null,
+      contactFormDemande: null,
       showForm: false,
       partenaires: [
         {

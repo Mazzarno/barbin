@@ -7,11 +7,23 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@hypernym/nuxt-gsap",
+    "nuxt-mail",
     "@nuxt/image",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-swiper",
   ],
+
+  mail: {
+    message: {
+      to: "postmaster@barbincps.fr",
+    },
+    smtp: {
+      host: "smtp.example.com",
+      port: 587,
+    },
+  },
+
   gsap: {
     composables: true,
     provide: true,
@@ -21,7 +33,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: "https://barbin-cps.fr",
+    url: "https://barbincps.fr",
     name: "Barbin CPS",
   },
   app: {
@@ -38,12 +50,14 @@ export default defineNuxtConfig({
         {
           hid: "description",
           name: "description",
-          content: "",
+          content:
+            "Experts en chauffage, plomberie et sanitaire dans l'Oise et le Val-d'Oise. Des solutions sur mesure pour l'installation, la réparation et l'entretien. Contactez-nous dès maintenant pour des solutions de chauffage et plomberie adaptées à vos besoins.",
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: "",
+          content:
+            "Chauffage, Plomberie, Installation chauffage, Dépannage plomberie, Entretien chaudière, Oise, Expert chauffagiste, Solutions plomberie, Dépannage d'urgence, Rénovation chauffage, Services plombier",
         },
         { hid: "language", name: "language", content: "French" },
         { hid: "revisit-after", name: "revisit-after", content: "1 days" },
@@ -53,17 +67,18 @@ export default defineNuxtConfig({
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://www",
+          content: "https://barbincps.fr",
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: "",
+          content: "BARBIN Chauffage Plomberie Sanitaire",
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: "",
+          content:
+            "Experts en chauffage, plomberie et sanitaire dans l'Oise et le Val-d'Oise. Des solutions sur mesure pour l'installation, la réparation et l'entretien. Contactez-nous dès maintenant pour des solutions de chauffage et plomberie adaptées à vos besoins.",
         },
         // Twitter
         {
@@ -74,17 +89,18 @@ export default defineNuxtConfig({
         {
           hid: "twitter:url",
           property: "twitter:url",
-          content: "https://www.",
+          content: "https://barbincps.fr.",
         },
         {
           hid: "twitter:title",
           property: "twitter:title",
-          content: "",
+          content: "BARBIN Chauffage Plomberie Sanitaire",
         },
         {
           hid: "twitter:description",
           property: "twitter:description",
-          content: "",
+          content:
+            "Experts en chauffage, plomberie et sanitaire dans l'Oise et le Val-d'Oise. Des solutions sur mesure pour l'installation, la réparation et l'entretien. Contactez-nous dès maintenant pour des solutions de chauffage et plomberie adaptées à vos besoins.",
         },
       ],
       link: [
