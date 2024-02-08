@@ -9,6 +9,7 @@
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
         <NuxtLink
+          to="/"
           @click="goToTop"
           aria-label="BARBIN C.P.S"
           title="BARBIN C.P.S"
@@ -204,6 +205,7 @@
         </button>
       </div>
       <NuxtLink
+        to="/"
         @click="goToTop"
         aria-label="BARBIN C.P.S"
         title="BARBIN C.P.S"
@@ -382,13 +384,7 @@
         </span>
       </div>
     </aside>
-    <!-- CTA 
-    <div
-      class="z-40 rounded-full fixed bottom-1/4 right-1/2 p-12 bg-white bg-opacity-40 backdrop-blur-xl drop-shadow-4xl shadow-xl"
-    >
-      <i class="mdi mdi-phone-outline"></i>
-    </div>
--->
+
     <main class="min-h-screen">
       <slot />
     </main>
@@ -399,6 +395,7 @@
       <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div class="sm:col-span-2">
           <NuxtLink
+            to="/"
             @click="goToTop"
             aria-label="BARBIN C.P.S"
             title="BARBIN C.P.S"
@@ -488,26 +485,29 @@
           </NuxtLink>
           <div class="mt-6 lg:max-w-sm">
             <p class="text-sm text-gray-900">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
+              Experts en chauffage, plomberie et sanitaire dans l'Oise et le
+              Val-d'Oise. Des solutions sur mesure pour l'installation, la
+              réparation et l'entretien.
             </p>
             <p class="mt-4 text-sm text-gray-900">
-              Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-              beatae vitae dicta sunt explicabo.
+              Contactez-nous dès maintenant pour des solutions de chauffage et
+              plomberie adaptées à vos besoins.
             </p>
           </div>
         </div>
-        <div class="sm:col-span-2">
-          <iframe
-            class="rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
-            width="100%"
-            height="100%"
-            style="border: 0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div class="sm:col-span-2 relative">
+          <div class="lg:absolute lg:-top-24 lg:inset-0">
+            <iframe
+              class="rounded-lg drop-shadow-4xl shadow-2xl opacity-90 backdrop-blur-xl"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
       <div
@@ -520,28 +520,28 @@
           class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <li>
-            <a
-              href="/"
-              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            <nuxt-link
+              to="/plan"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Plan du Site
-            </a>
+            </nuxt-link>
           </li>
           <li>
-            <a
-              href="/"
-              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            <nuxt-link
+              to="/politique"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Politique de Confidentialité
-            </a>
+            </nuxt-link>
           </li>
           <li>
-            <a
-              href="/"
-              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-deep-purple-accent-400"
+            <nuxt-link
+              to="/mentions_legales"
+              class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Mentions Légales
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -549,7 +549,7 @@
   </div>
 </template>
 <script>
-import { useGsap } from '#gsap'
+import { useGsap } from "#gsap";
 export default {
   data: () => ({
     showContact: false,
@@ -559,47 +559,47 @@ export default {
     openDrawer: false,
   }),
   mounted() {
-    this.lastScrollPosition = window.pageYOffset
-    window.addEventListener('scroll', this.onScroll)
+    this.lastScrollPosition = window.pageYOffset;
+    window.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
     goToChauffage() {
-      useGsap.to(window, { duration: 0, scrollTo: '#chauffage' })
+      useGsap.to(window, { duration: 0, scrollTo: "#chauffage", offsetY: 200 });
     },
     goToPlomberie() {
-      useGsap.to(window, { duration: 0, scrollTo: '#plomberie' })
+      useGsap.to(window, { duration: 0, scrollTo: "#plomberie" });
     },
     goToSanitaire() {
-      useGsap.to(window, { duration: 0, scrollTo: '#sanitaire' })
+      useGsap.to(window, { duration: 0, scrollTo: "#sanitaire" });
     },
     goToTop() {
-      useGsap.to(window, { duration: 0, scrollTo: '0' })
+      useGsap.to(window, { duration: 0, scrollTo: "0" });
     },
     drawer() {
-      this.openDrawer = !this.openDrawer
+      this.openDrawer = !this.openDrawer;
     },
     contact() {
-      this.showContact = !this.showContact
+      this.showContact = !this.showContact;
     },
 
     onScroll() {
       if (window.pageYOffset < 0) {
-        return
+        return;
       }
       if (
         Math.abs(window.pageYOffset - this.lastScrollPosition) <
         this.scrollOffset
       ) {
-        return
+        return;
       }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition
-      this.lastScrollPosition = window.pageYOffset
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
+      this.lastScrollPosition = window.pageYOffset;
     },
   },
-}
+};
 </script>
 
 <style scoped>
