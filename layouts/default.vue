@@ -102,6 +102,7 @@
         <ul class="items-center hidden space-x-8 lg:flex">
           <li>
             <NuxtLink
+              to="/"
               @click="goToChauffage"
               aria-label="Chauffage"
               title="Chauffage"
@@ -116,6 +117,7 @@
           </li>
           <li>
             <NuxtLink
+              to="/"
               @click="goToPlomberie"
               aria-label="Plomberie"
               title="Plomberie"
@@ -130,6 +132,7 @@
           </li>
           <li>
             <NuxtLink
+              to="/"
               @click="goToSanitaire"
               aria-label="Sanitaire"
               title="Sanitaire"
@@ -298,20 +301,8 @@
 
       <div class="flex flex-col justify-around items-center h-5/6">
         <ul class="list-none">
-          <!--  <li class="my-8">
-            <NuxtLink to="/">
-              <span
-                class="mdi mdi-home-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
-              ></span>
-              <span
-                class="ml-3 text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
-              >
-                Accueil
-              </span>
-            </NuxtLink>
-          </li>-->
           <li class="my-8">
-            <NuxtLink class="cursor-pointer" @click="goToChauffage">
+            <NuxtLink class="cursor-pointer" @click="goToChauffage" to="/">
               <span
                 class="mdi mdi-home-thermometer-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
               ></span>
@@ -323,7 +314,7 @@
             </NuxtLink>
           </li>
           <li class="my-8">
-            <NuxtLink class="cursor-pointer" @click="goToPlomberie">
+            <NuxtLink class="cursor-pointer" @click="goToPlomberie" to="/">
               <span
                 class="mdi mdi-water-outline mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
               ></span>
@@ -335,7 +326,7 @@
             </NuxtLink>
           </li>
           <li class="my-0">
-            <NuxtLink class="cursor-pointer" @click="goToSanitaire">
+            <NuxtLink class="cursor-pointer" @click="goToSanitaire" to="/">
               <span
                 class="mdi mdi-shower mdi-24px text-2xl mt-6 p-4 tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
               ></span>
@@ -502,7 +493,7 @@
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
               width="100%"
               height="100%"
-              style="border: 0"
+              style="border: 0;"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -514,34 +505,42 @@
         class="flex flex-col-reverse justify-between pt-6 pb-6 border-t lg:flex-row"
       >
         <p class="text-sm text-gray-900">
-          © Copyright 2020 Lorem Inc. All rights reserved.
+          © {{ new Date().getFullYear() }} ~ BARBIN C.P.S —
+          <a
+            href="https://mazzar.fr"
+            rel="noopener noreferrer"
+            class="text-gray-900 ml-1 hover:text-grey-200 hover:underline hover:scale-105 duration-300 hover:animate-pulse"
+            target="_blank"
+          >
+            @MazzaR
+          </a>
         </p>
         <ul
           class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <li>
-            <nuxt-link
+            <NuxtLink
               to="/plan"
               class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Plan du Site
-            </nuxt-link>
+            </NuxtLink>
           </li>
           <li>
-            <nuxt-link
+            <NuxtLink
               to="/politique"
               class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Politique de Confidentialité
-            </nuxt-link>
+            </NuxtLink>
           </li>
           <li>
-            <nuxt-link
+            <NuxtLink
               to="/mentions_legales"
               class="cursor-pointer text-sm text-gray-900 transition-colors duration-300 hover:text-[#03045E]"
             >
               Mentions Légales
-            </nuxt-link>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -549,7 +548,7 @@
   </div>
 </template>
 <script>
-import { useGsap } from "#gsap";
+import { useGsap } from '#gsap'
 export default {
   data: () => ({
     showContact: false,
@@ -559,47 +558,47 @@ export default {
     openDrawer: false,
   }),
   mounted() {
-    this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", this.onScroll);
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
     goToChauffage() {
-      useGsap.to(window, { duration: 0, scrollTo: "#chauffage", offsetY: 200 });
+      useGsap.to(window, { duration: 0, scrollTo: '#chauffage', offsetY: 200 })
     },
     goToPlomberie() {
-      useGsap.to(window, { duration: 0, scrollTo: "#plomberie" });
+      useGsap.to(window, { duration: 0, scrollTo: '#plomberie', offsetY: 200 })
     },
     goToSanitaire() {
-      useGsap.to(window, { duration: 0, scrollTo: "#sanitaire" });
+      useGsap.to(window, { duration: 0, scrollTo: '#sanitaire', offsetY: 200 })
     },
     goToTop() {
-      useGsap.to(window, { duration: 0, scrollTo: "0" });
+      useGsap.to(window, { duration: 0, scrollTo: '0' })
     },
     drawer() {
-      this.openDrawer = !this.openDrawer;
+      this.openDrawer = !this.openDrawer
     },
     contact() {
-      this.showContact = !this.showContact;
+      this.showContact = !this.showContact
     },
 
     onScroll() {
       if (window.pageYOffset < 0) {
-        return;
+        return
       }
       if (
         Math.abs(window.pageYOffset - this.lastScrollPosition) <
         this.scrollOffset
       ) {
-        return;
+        return
       }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
-      this.lastScrollPosition = window.pageYOffset;
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition
+      this.lastScrollPosition = window.pageYOffset
     },
   },
-};
+}
 </script>
 
 <style scoped>

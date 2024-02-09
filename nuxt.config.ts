@@ -19,8 +19,12 @@ export default defineNuxtConfig({
       to: "postmaster@barbincps.fr",
     },
     smtp: {
-      host: "smtp.example.com",
-      port: 587,
+      host: "smtp.mailtrap.io",
+      port: 2525,
+      auth: {
+        user: "username",
+        pass: "password",
+      },
     },
   },
 

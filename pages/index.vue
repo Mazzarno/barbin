@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-smooth">
+  <div>
     <!-- CONTACT FORM -->
     <div
       :class="showForm ? 'contact_form-open' : 'contact_form-close'"
@@ -206,7 +206,7 @@
     <section
       id="header"
       class="w-full h-screen bg-fixed bg-cover bg-center relative"
-      style="background-image: url(/img/salle_de_bain.jpg)"
+      style="background-image: url(/img/salle_de_bain.jpg);"
     >
       <div class="absolute bottom-5 z-10 left-1/2 transform -translate-x-1/2">
         <div
@@ -472,7 +472,7 @@
         </div>
       </div>
     </section>
-    <!-- CERTIFICATIONS -->
+    <!-- CERTIFICATION -->
     <section
       id="certifications"
       class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
@@ -528,6 +528,7 @@
             :key="certification.id"
           >
             <a
+              class="flex place-content-center"
               :href="certification.lien"
               target="_blank"
               rel="noopener noreferrer"
@@ -567,11 +568,10 @@
             Installation et rénovation
           </h6>
           <p id="block1_text_plomberie" class="text-lg text-gray-900">
-            Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
-            la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
-            assurant un fonctionnement fiable. De plus, cette pratique permet
-            d'optimiser l'efficacité énergétique, réduisant les dépenses en
-            énergie.
+            Faire appel à BARBIN CPS pour l'installation et la rénovation de
+            plomberie garantit un travail de qualité, réalisé avec précision et
+            selon les normes en vigueur, assurant ainsi la durabilité des
+            installations.
           </p>
           <h6
             id="block2_title_plomberie"
@@ -580,11 +580,9 @@
             Intervention d'urgence et réparation
           </h6>
           <p id="block2_text_plomberie" class="text-lg text-gray-900">
-            Un entretien de chaudière régulier effectué par BARBIN CPS prolonge
-            la durée de vie de l'appareil, évitant ainsi les pannes coûteuses et
-            assurant un fonctionnement fiable. De plus, cette pratique permet
-            d'optimiser l'efficacité énergétique, réduisant les dépenses en
-            énergie.
+            Les interventions d'urgence et des réparations de BARBIN CPS assure
+            une réponse rapide et efficace aux problèmes, préservant ainsi
+            l'intégrité des installations.
           </p>
         </div>
 
@@ -692,7 +690,7 @@
         </swiper>
       </div>
     </section>
-    <!-- SANITAIRE -->
+    <!-- SANITAIRE / CTA CONTACT III -->
     <section
       id="sanitaire"
       class="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pb-20"
@@ -860,71 +858,70 @@
         </button>
       </div>
     </section>
-    <!-- CONTACT III -->
   </div>
 </template>
 
 <script>
-import { useGsap } from "#gsap";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useGsap } from '#gsap'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 export default {
   mounted() {
     // ANIMATION ABOUT
     var tlAbout = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#about",
-        start: "top 80%",
+        trigger: '#about',
+        start: 'top 80%',
         scrub: 1,
-        end: () => "+=" + document.querySelector("#about").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
+        end: () => '+=' + document.querySelector('#about').offsetHeight * 0.8,
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlAbout
       .fromTo(
-        "#title_about",
+        '#title_about',
         { x: -100, y: -100, duration: 0, opacity: 0, scale: 1.5 },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#text1_about",
+        '#text1_about',
         { x: -100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#text2_about",
+        '#text2_about',
         { x: -100, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#image_about",
+        '#image_about',
         { x: 100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#text3_about",
+        '#text3_about',
         { x: 0, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1 },
       )
-      .fromTo("#cta_about", { opacity: 0 }, { duration: 1, opacity: 1 });
+      .fromTo('#cta_about', { opacity: 0 }, { duration: 1, opacity: 1 })
     // ANIMATION CHAUFFAGE
     var tlChauffage = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#chauffage",
-        start: "top 90%",
+        trigger: '#chauffage',
+        start: 'top 90%',
         scrub: 1,
         end: () =>
-          "+=" + document.querySelector("#chauffage").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
+          '+=' + document.querySelector('#chauffage').offsetHeight * 0.8,
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlChauffage
       .fromTo(
-        "#title_chauffage",
+        '#title_chauffage',
         {
           x: -100,
           y: -100,
@@ -932,10 +929,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#bg_chauffage",
+        '#bg_chauffage',
         {
           x: 0,
           y: -10,
@@ -943,10 +940,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#block1_logo_chauffage, #block2_logo_chauffage, #block4_logo_chauffage, #block4_logo_chauffage",
+        '#block1_logo_chauffage, #block1_title_chauffage, #block1_text_chauffage',
         {
           x: -10,
           y: 0,
@@ -954,10 +951,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#block1_title_chauffage, #block2_title_chauffage, #block3_title_chauffage, #block4_title_chauffage",
+        '#block2_logo_chauffage, #block2_title_chauffage, #block2_text_chauffage',
         {
           x: -10,
           y: 0,
@@ -965,10 +962,32 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#image_chauffage",
+        '#block3_logo_chauffage, #block3_title_chauffage, #block3_text_chauffage',
+        {
+          x: -10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block4_logo_chauffage, #block4_title_chauffage, #block4_text_chauffage',
+        {
+          x: -10,
+          y: 0,
+          scale: 1,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_chauffage',
         {
           x: 10,
           y: 0,
@@ -976,34 +995,23 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
-      .fromTo(
-        "#block1_text_chauffage, #block2_text_chauffage, #block3_text_chauffage, #block4_text_chauffage",
-        {
-          x: -10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      );
 
     //ANIMATION CERTIFICATION
     var tlPCertifications = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 90%",
+        trigger: '#certifications',
+        start: 'top 90%',
         scrub: 1,
         end: () =>
-          "+=" + document.querySelector("#certifications").offsetHeight,
-        toggleActions: "restart reverse none none",
+          '+=' + document.querySelector('#certifications').offsetHeight,
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlPCertifications
       .fromTo(
-        "#title_certifications",
+        '#title_certifications',
         {
           x: -100,
           y: -100,
@@ -1011,33 +1019,33 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#image_certifications",
+        '#image_certifications',
         {
           x: -100,
           y: 0,
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      );
+        { x: 0, y: 0, duration: 3, opacity: 1 },
+      )
 
     //ANIMATION PARTENAIRES
     var tlPartenaires = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#partenaires",
-        start: "top 90%",
+        trigger: '#partenaires',
+        start: 'top 90%',
         scrub: 1,
-        end: () => "+=" + document.querySelector("#partenaires").offsetHeight,
+        end: () => '+=' + document.querySelector('#partenaires').offsetHeight,
 
-        toggleActions: "restart reverse none none",
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlPartenaires
       .fromTo(
-        "#title_partenaires",
+        '#title_partenaires',
         {
           x: -100,
           y: -100,
@@ -1045,34 +1053,34 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#image_partenaires",
+        '#image_partenaires',
         {
           x: -100,
           y: 0,
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      );
+        { x: 0, y: 0, duration: 3, opacity: 1 },
+      )
     // ANIMATION PLOMBERIE
 
     var tlPlomberie = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#plomberie",
-        start: "top 90%",
+        trigger: '#plomberie',
+        start: 'top 90%',
         scrub: 1,
         end: () =>
-          "+=" + document.querySelector("#plomberie").offsetHeight * 0.8,
+          '+=' + document.querySelector('#plomberie').offsetHeight * 0.8,
 
-        toggleActions: "restart reverse none none",
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlPlomberie
       .fromTo(
-        "#title_plomberie",
+        '#title_plomberie',
         {
           x: -100,
           y: -100,
@@ -1080,10 +1088,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#block1_title_plomberie, #block2_title_plomberie ",
+        '#block1_title_plomberie, #block1_text_plomberie ',
         {
           x: -100,
           y: 0,
@@ -1091,58 +1099,59 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
       )
       .fromTo(
-        "#image1_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image3_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image2_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#block1_text_plomberie, #block2_text_plomberie ",
+        '#block2_title_plomberie, #block2_text_plomberie ',
         {
           x: -100,
           opacity: 0,
         },
-        { x: 0, duration: 3, opacity: 1 }
-      );
+        { x: 0, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image1_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image3_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+      .fromTo(
+        '#image2_plomberie',
+        {
+          x: 100,
+          scale: 1.25,
+          opacity: 0,
+        },
+        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 },
+      )
+
     // ANIMATION SANITAIRE
 
     var tlSanitaire = useGsap.timeline({
       scrollTrigger: {
-        trigger: "#sanitaire",
-        start: "top 90%",
+        trigger: '#sanitaire',
+        start: 'top 90%',
         scrub: 1,
         end: () =>
-          "+=" + document.querySelector("#sanitaire").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
+          '+=' + document.querySelector('#sanitaire').offsetHeight * 0.8,
+        toggleActions: 'restart reverse none none',
       },
-    });
+    })
     tlSanitaire
       .fromTo(
-        "#title_sanitaire",
+        '#title_sanitaire',
         {
           x: -100,
           y: -100,
@@ -1150,10 +1159,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#bg_sanitaire",
+        '#bg_sanitaire',
         {
           x: 0,
           y: -10,
@@ -1161,10 +1170,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#block1_logo_sanitaire, #block2_logo_sanitaire, #block4_logo_sanitaire, #block4_logo_sanitaire",
+        '#block1_logo_sanitaire, #block1_title_sanitaire, #block1_text_sanitaire',
         {
           x: -10,
           y: 0,
@@ -1172,10 +1181,10 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#block1_title_sanitaire, #block2_title_sanitaire, #block3_title_sanitaire, #block4_title_sanitaire",
+        '#block2_logo_sanitaire, #block2_title_sanitaire, #block2_text_sanitaire',
         {
           x: -10,
           y: 0,
@@ -1183,10 +1192,32 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
       .fromTo(
-        "#image_sanitaire",
+        '#block3_logo_sanitaire, #block3_title_sanitaire, #block3_text_sanitaire',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#block4_logo_sanitaire, #block4_title_sanitaire, #block4_text_sanitaire',
+        {
+          x: -10,
+          y: 0,
+          scale: 1.25,
+          duration: 0,
+          opacity: 0,
+        },
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
+      )
+      .fromTo(
+        '#image_sanitaire',
         {
           x: 10,
           y: 0,
@@ -1194,27 +1225,16 @@ export default {
           duration: 0,
           opacity: 0,
         },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
+        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
-      .fromTo(
-        "#block1_text_sanitaire, #block2_text_sanitaire, #block3_text_sanitaire, #block4_text_sanitaire",
-        {
-          x: -10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      );
   },
 
   methods: {
     goToAbout() {
-      useGsap.to(window, { duration: 0, scrollTo: "#about" });
+      useGsap.to(window, { duration: 0, scrollTo: '#about' })
     },
     toggleForm() {
-      this.showForm = !this.showForm;
+      this.showForm = !this.showForm
     },
     sendEmail() {
       this.$mail.send({
@@ -1231,7 +1251,7 @@ export default {
           this.contactFormEmail +
           `Téléphone : ` +
           this.contactFormTel,
-      });
+      })
     },
   },
   components: {
@@ -1239,7 +1259,7 @@ export default {
     SwiperSlide,
   },
   setup() {
-    return { modules: [Autoplay, Pagination, Navigation] };
+    return { modules: [Autoplay, Pagination, Navigation] }
   },
   data() {
     return {
@@ -1252,177 +1272,178 @@ export default {
       showForm: false,
       partenaires: [
         {
-          nom: "Frisquet",
-          img: "/img/logo/frisquet.png",
-          lien: "https://www.frisquet.fr",
+          nom: 'Frisquet',
+          img: '/img/logo/frisquet.png',
+          lien: 'https://www.frisquet.fr',
           id: 1,
         },
         {
-          nom: "De Dietrich",
-          img: "/img/logo/dedietrich.png",
-          lien: "https://www.dedietrich.org",
+          nom: 'De Dietrich',
+          img: '/img/logo/dedietrich.png',
+          lien: 'https://www.dedietrich.org',
           id: 2,
         },
         {
-          nom: "Viessmann",
-          img: "/img/logo/viessmann.png",
-          lien: "https://www.viessmann.fr/",
+          nom: 'Viessmann',
+          img: '/img/logo/viessmann.png',
+          lien: 'https://www.viessmann.fr/',
           id: 3,
         },
         {
-          nom: "ELM Leblanc",
-          img: "/img/logo/ELM.png",
-          lien: "https://elmleblanc.fr",
+          nom: 'ELM Leblanc',
+          img: '/img/logo/ELM.png',
+          lien: 'https://elmleblanc.fr',
           id: 4,
         },
         {
-          nom: "Chappee",
-          img: "/img/logo/chappee.png",
-          lien: "https://www.chappee.fr",
+          nom: 'Chappee',
+          img: '/img/logo/chappee.png',
+          lien: 'https://www.chappee.fr',
           id: 4,
         },
         {
-          nom: "Atlantic",
-          img: "/img/logo/atlantic.png",
-          lien: "https://www.atlantic.fr",
+          nom: 'Atlantic',
+          img: '/img/logo/atlantic.png',
+          lien: 'https://www.atlantic.fr',
           id: 5,
         },
         {
-          nom: "Acova",
-          img: "/img/logo/acova.png",
-          lien: "https://www.acova.fr",
+          nom: 'Acova',
+          img: '/img/logo/acova.png',
+          lien: 'https://www.acova.fr',
           id: 6,
         },
         {
-          nom: "Grohe",
-          img: "/img/logo/grohe.png",
-          lien: "https://www.grohe.fr",
+          nom: 'Grohe',
+          img: '/img/logo/grohe.png',
+          lien: 'https://www.grohe.fr',
           id: 7,
         },
         {
-          nom: "Hansgrohe",
-          img: "/img/logo/hansgrohe.png",
-          lien: "https://www.hansgrohe.fr",
+          nom: 'Hansgrohe',
+          img: '/img/logo/hansgrohe.png',
+          lien: 'https://www.hansgrohe.fr',
           id: 8,
         },
         {
-          nom: "Toto",
-          img: "/img/logo/toto.png",
-          lien: "https://www.toto.fr",
+          nom: 'Toto',
+          img: '/img/logo/toto.png',
+          lien: 'https://www.toto.fr',
           id: 9,
         },
         {
-          nom: "Franke",
-          img: "/img/logo/franke.png",
-          lien: "https://www.franke.fr",
+          nom: 'Franke',
+          img: '/img/logo/franke.png',
+          lien: 'https://www.franke.fr',
           id: 10,
         },
         {
-          nom: "Nicoll",
-          img: "/img/logo/nicoll.png",
-          lien: "https://www.nicoll.fr",
+          nom: 'Nicoll',
+          img: '/img/logo/nicoll.png',
+          lien: 'https://www.nicoll.fr',
           id: 11,
         },
         {
-          nom: "Allia",
-          img: "/img/logo/allia.png",
-          lien: "https://www.allia.fr",
+          nom: 'Allia',
+          img: '/img/logo/allia.png',
+          lien: 'https://www.allia.fr',
           id: 12,
         },
         {
-          nom: "Geberit",
-          img: "/img/logo/geberit.png",
-          lien: "https://www.geberit.fr",
+          nom: 'Geberit',
+          img: '/img/logo/geberit.png',
+          lien: 'https://www.geberit.fr',
           id: 13,
         },
       ],
       certifications: [
         {
-          nom: "Reconnu Garant de l’Environnement",
-          img: "/img/logo/rge.png",
-          lien: "https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge",
+          nom: 'Reconnu Garant de l’Environnement',
+          img: '/img/logo/rge.png',
+          lien:
+            'https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge',
           id: 1,
         },
         {
-          nom: "Qualibat",
-          img: "/img/logo/qualibat.png",
-          lien: "/",
+          nom: 'Qualibat',
+          img: '/img/logo/qualibat.png',
+          lien: '/',
           id: 2,
         },
         {
-          nom: "Professionnel du Gaz",
-          img: "/img/logo/pg.png",
-          lien: "https://lesprofessionnelsdugaz.com/pg/18653",
+          nom: 'Professionnel du Gaz',
+          img: '/img/logo/pg.png',
+          lien: 'https://lesprofessionnelsdugaz.com/pg/18653',
           id: 3,
         },
       ],
       chaudieres: [
         {
-          nom: "Chaudière Viessmann",
-          img: "/img/chaudiere_viessmann.jpg",
-          lien: "https://www.viessmann.fr",
+          nom: 'Chaudière Viessmann',
+          img: '/img/chaudiere_viessmann.jpg',
+          lien: 'https://www.viessmann.fr',
           id: 1,
         },
         {
-          nom: "Chaudière Frisquet",
-          img: "/img/chaudiere_frisquet.jpg",
-          lien: "https://www.frisquet.fr",
+          nom: 'Chaudière Frisquet',
+          img: '/img/chaudiere_frisquet.jpg',
+          lien: 'https://www.frisquet.fr',
           id: 2,
         },
         {
-          nom: "Chaudière De Dietrich",
-          img: "/img/chaudiere_dedietrich.jpg",
-          lien: "https://www.dedietrich-thermique.fr",
+          nom: 'Chaudière De Dietrich',
+          img: '/img/chaudiere_dedietrich.jpg',
+          lien: 'https://www.dedietrich-thermique.fr',
           id: 3,
         },
         {
-          nom: "Chaudière Chappee",
-          img: "/img/chaudiere_chappee.jpg",
-          lien: "https://www.chappee.com",
+          nom: 'Chaudière Chappee',
+          img: '/img/chaudiere_chappee.jpg',
+          lien: 'https://www.chappee.com',
           id: 4,
         },
         {
-          nom: "Chaudière ELM Leblanc",
-          img: "/img/chaudiere_ELM_Leblanc.jpg",
-          lien: "https://www.elmleblanc.fr",
+          nom: 'Chaudière ELM Leblanc',
+          img: '/img/chaudiere_ELM_Leblanc.jpg',
+          lien: 'https://www.elmleblanc.fr',
           id: 5,
         },
       ],
       sdbs: [
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette1.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette1.jpg',
           id: 1,
         },
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette2.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette2.jpg',
           id: 2,
         },
         {
-          nom: "Salle de bain avec toilette",
-          img: "/img/salle_de_bain_toilette3.jpg",
+          nom: 'Salle de bain avec toilette',
+          img: '/img/salle_de_bain_toilette3.jpg',
           id: 3,
         },
         {
-          nom: "Salle de bain",
-          img: "/img/salle_de_bain1.jpg",
+          nom: 'Salle de bain',
+          img: '/img/salle_de_bain1.jpg',
           id: 4,
         },
         {
-          nom: "Carrelage de douche",
-          img: "/img/carrelage_douche.jpg",
+          nom: 'Carrelage de douche',
+          img: '/img/carrelage_douche.jpg',
           id: 5,
         },
         {
-          nom: "Toilette avec accès handicapé",
-          img: "/img/toilette_handicap.jpg",
+          nom: 'Toilette avec accès handicapé',
+          img: '/img/toilette_handicap.jpg',
           id: 6,
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style>
@@ -1465,7 +1486,7 @@ export default {
   animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 15px;
     left: 18px;
