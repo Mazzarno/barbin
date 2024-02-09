@@ -566,13 +566,13 @@ export default {
   },
   methods: {
     goToChauffage() {
-      useGsap.to(window, { duration: 0, scrollTo: '#chauffage', offsetY: 200 })
+      useGsap.to(window, { duration: 0, scrollTo: '#chauffage', offsetY: -200 })
     },
     goToPlomberie() {
-      useGsap.to(window, { duration: 0, scrollTo: '#plomberie', offsetY: 200 })
+      useGsap.to(window, { duration: 0, scrollTo: '#plomberie', offsetY: -200 })
     },
     goToSanitaire() {
-      useGsap.to(window, { duration: 0, scrollTo: '#sanitaire', offsetY: 200 })
+      useGsap.to(window, { duration: 0, scrollTo: '#sanitaire', offsetY: -200 })
     },
     goToTop() {
       useGsap.to(window, { duration: 0, scrollTo: '0' })
