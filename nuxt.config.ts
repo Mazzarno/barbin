@@ -7,26 +7,11 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@hypernym/nuxt-gsap",
-    "nuxt-mail",
     "@nuxt/image",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-swiper",
   ],
-
-  mail: {
-    message: {
-      to: "postmaster@barbincps.fr",
-    },
-    smtp: {
-      host: "smtp.mailtrap.io",
-      port: 2525,
-      auth: {
-        user: "username",
-        pass: "password",
-      },
-    },
-  },
 
   gsap: {
     composables: true,
