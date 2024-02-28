@@ -2,8 +2,8 @@
   <div>
     <!-- CONTACT FORM -->
     <div
-      :class="showForm ? 'contact_form-open' : 'contact_form-close'"
-      v-if="showForm"
+      :class="showContact ? 'contact_form-open' : 'contact_form-close'"
+      v-if="showContact"
       class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
     >
       <div
@@ -24,7 +24,7 @@
             </h3>
             <button
               class="p-1 ml-auto bg-transparent border-0 text-[#03045E] float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-              v-on:click="toggleForm()"
+              v-on:click="toggleContact()"
             >
               <span
                 class="bg-transparent text-[#03045E] h-6 w-6 text-2xl block outline-none focus:outline-none"
@@ -38,170 +38,60 @@
             class="overflow-hidden relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
           >
             <section class="inline-block w-full relative p-5 sm:p-10">
-              <form>
-                <div class="mb-1 sm:mb-2">
-                  <label
-                    for="nom"
-                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                  >
-                    Nom / Prénom
-                  </label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                    >
-                      <i
-                        class="mdi mdi-account-outline text-gray-600 mdi-18px"
-                      ></i>
-                    </div>
-                    <input
-                      type="name"
-                      id="name"
-                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
-                      placeholder="Léon Dupont"
-                    />
-                  </div>
-                </div>
-                <div class="mb-1 sm:mb-2">
-                  <label
-                    for="telephone"
-                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                  >
-                    Téléphone
-                  </label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                    >
-                      <i
-                        class="mdi mdi-phone-outline text-gray-600 mdi-18px"
-                      ></i>
-                    </div>
-                    <input
-                      type="tel"
-                      id="tel"
-                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
-                      placeholder="06.07.89.01.49"
-                    />
-                  </div>
-                </div>
-                <div class="mb-1 sm:mb-2">
-                  <label
-                    for="email"
-                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                  >
-                    E-mail
-                  </label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                    >
-                      <i
-                        class="mdi mdi-email-outline text-gray-600 mdi-18px"
-                      ></i>
-                    </div>
-                    <input
-                      type="email"
-                      id="email"
-                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
-                      placeholder="name@flowbite.com"
-                    />
-                  </div>
-                </div>
-                <div class="mb-1 sm:mb-2">
-                  <label
-                    for="email"
-                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                  >
-                    Adresse
-                  </label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                    >
-                      <i class="mdi mdi-map-outline text-gray-600 mdi-18px"></i>
-                    </div>
-                    <input
-                      type="adresse"
-                      id="adresse"
-                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
-                      placeholder="16 rue du Général Leclerc, 60260 LAMORLAYE"
-                    />
-                  </div>
-                </div>
-                <div class="mb-1 sm:mb-2">
-                  <label
-                    for="email"
-                    class="inline-block mb-1 bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md font-semibold"
-                  >
-                    Demande
-                  </label>
-                  <div class="relative">
-                    <div
-                      class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                    >
-                      <i
-                        class="mdi mdi-wrench-outline text-gray-600 mdi-18px"
-                      ></i>
-                    </div>
-                    <select
-                      id="demande"
-                      class="bg-gray-50 border border-gray-100 text-sm rounded-lg block w-full ps-10 p-2.5 appearance-none focus:outline-none focus:shadow-outline"
-                    >
-                      <option>Entretien de chaudière</option>
-                      <option>Intervention plomberie</option>
-                      <option>Intervention chauffage</option>
-                      <option>Autres</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="flex items-center mb-4">
-                  <input
-                    id="checkbox-1"
-                    type="checkbox"
-                    value=""
-                    class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded"
-                  />
-                  <label
-                    for="checkbox-1"
-                    class="ms-2 text-sm font-medium text-gray-800"
-                  >
-                    J'accepte la
-                    <nuxt-link
-                      to="/politique_de_confidentialité"
-                      class="text-[#03045E] hover:underline"
-                    >
-                      politique de confidentialité
-                    </nuxt-link>
-                    du site.
-                  </label>
-                </div>
-                <div class="mt-4 mb-2">
-                  <button
-                    @click="toggleForm()"
-                    class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg inline-flex items-center justify-center w-full"
-                  >
-                    <div
-                      class="glow-btn inset-0 w-[30px] h-[30px] absolute rotate-45"
-                    ></div>
-                    <div
-                      class="inline-block w-full bg-[#03045E] bg-opacity-80 backdrop-blur-xl rounded-md z-10 relative"
-                    >
-                      <h1
-                        class="uppercase py-3 px-6 text-gray-100 hover:text-gray-300 drop-shadow-md font-bold"
-                      >
-                        Envoyer
-                      </h1>
-                    </div>
-                  </button>
-                </div>
-              </form>
+              <a href="tel:0344212704">
+                <h1
+                  class="mb-5 text-xl tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+                >
+                  <i class="mdi mdi-phone-classic mdi-16px"></i>
+                  03 44 21 27 04
+                </h1>
+              </a>
+              <a href="tel:0607890149">
+                <h1
+                  class="mb-5 text-xl tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+                >
+                  <i class="mdi mdi-phone mdi-16px"></i>
+                  06 07 89 01 49
+                </h1>
+              </a>
+              <a href="mailto:contact@barbincps.fr">
+                <h1
+                  class="mb-5 text-xl tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+                >
+                  <i class="mdi mdi-email mdi-16px"></i>
+                  contact@barbincps.fr
+                </h1>
+              </a>
+              <a
+                target="_blank"
+                href="https://www.google.com/maps/place/BARBIN+CPS/@49.155504,2.439245,13z/data=!4m6!3m5!1s0x47e647e648cf9b73:0xeccf53f4212f3c17!8m2!3d49.1555043!4d2.4392452!16s%2Fg%2F11rbdsd4k7?hl=fr&entry=ttu"
+              >
+                <h1
+                  class="mb-5 text-xl tracking-wide font-semibold bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors duration-200 hover:text-[#03045E]"
+                >
+                  <i class="mdi mdi-map-marker mdi-16px"></i>
+                  16 Rue du Général Leclerc, 60260 Lamorlaye
+                </h1>
+              </a>
+              <iframe
+                class="rounded-lg drop-shadow-4xl shadow-2xl opacity-90 backdrop-blur-xl"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
+                width="100%"
+                height="100%"
+                style="border: 0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </section>
           </div>
         </div>
       </div>
     </div>
-    <div v-if="showForm" class="opacity-30 fixed inset-0 z-40 bg-black"></div>
+    <div
+      v-if="showContact"
+      class="opacity-30 fixed inset-0 z-40 bg-black"
+    ></div>
     <!-- HEADER / CTA CONTACT I -->
     <section
       id="header"
@@ -236,7 +126,7 @@
                 des solutions de chauffage, plomberie et sanitaire de qualité.
               </p>
               <button
-                @click="toggleForm()"
+                @click="toggleContact()"
                 class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
               >
                 <div
@@ -309,7 +199,7 @@
       </div>
       <div class="flex items-center justify-center mt-6">
         <button
-          @click="toggleForm()"
+          @click="toggleContact()"
           class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
         >
           <div
@@ -840,7 +730,7 @@
       </div>
       <div class="flex items-center justify-center mt-6">
         <button
-          @click="toggleForm()"
+          @click="toggleContact()"
           class="overflow-hidden p-0.5 relative rounded-md drop-shadow-4xl shadow-xl hover:shadow-lg"
         >
           <div
@@ -860,7 +750,6 @@
     </section>
   </div>
 </template>
-
 <script>
 import { useGsap } from '#gsap'
 import 'swiper/css'
@@ -868,7 +757,6 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-
 export default {
   mounted() {
     // ANIMATION ABOUT
@@ -1228,30 +1116,12 @@ export default {
         { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 },
       )
   },
-
   methods: {
     goToAbout() {
       useGsap.to(window, { duration: 0, scrollTo: '#about' })
     },
-    toggleForm() {
-      this.showForm = !this.showForm
-    },
-    sendEmail() {
-      this.$mail.send({
-        from: this.contactFormNom,
-        subject: `Message du site web` + this.contactFormDemande,
-        text:
-          this.contactFormNom +
-          ` habitant au ` +
-          contactFormAdresse +
-          ` vous à envoyer un message via le site web barbincps.fr concernant ` +
-          this.contactFormDemande +
-          `.` +
-          ` Email : ` +
-          this.contactFormEmail +
-          `Téléphone : ` +
-          this.contactFormTel,
-      })
+    toggleContact() {
+      this.showContact = !this.showContact
     },
   },
   components: {
@@ -1263,13 +1133,7 @@ export default {
   },
   data() {
     return {
-      contactFormNom: null,
-      contactFormTel: null,
-      contactFormEmail: null,
-      contactFormAdresse: null,
-      contactFormName: null,
-      contactFormDemande: null,
-      showForm: false,
+      showContact: false,
       partenaires: [
         {
           nom: 'Frisquet',
