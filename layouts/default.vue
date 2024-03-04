@@ -16,7 +16,7 @@
           class="inline-flex items-center cursor-pointer"
         >
           <div
-            class="transition delay-100 hover:scale-105 duration-300 h-16 ml-5"
+            class="transition delay-100 hover:scale-105 duration-300 h-12 ml-2 sm:h-16 sm:ml-5"
           >
             <svg
               width="100%"

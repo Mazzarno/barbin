@@ -113,7 +113,7 @@
           <div class="flex items-center justify-between flex-row h-screen">
             <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
               <h1
-                class="bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md text-4xl font-semibold"
+                class="bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent transition-colors hover:text-[#03045E] drop-shadow-md text-2xl sm:text-4xl font-semibold"
               >
                 BARBIN CPS
                 <br />
@@ -155,23 +155,23 @@
     >
       <div class="grid gap-10 lg:grid-cols-2">
         <div class="lg:pr-10">
-          <h5
+          <h1
             id="title_about"
-            class="pb-5 text-4xl font-bold tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent"
+            class="pb-5 text-2xl sm:text-4xl font-bold tracking-wide bg-gradient-to-b from-[#03045E] to-[#023E8A] bg-clip-text text-transparent"
           >
             BARBIN CPS
             <br />
             Spécialiste Chauffage Plomberie et Sanitaire
             <span class="inline-block">depuis 1991</span>
-          </h5>
-          <p id="text1_about" class="mb-6 text-gray-900 text-lg">
+          </h1>
+          <p id="text1_about" class="mb-6 text-base text-gray-900 md:text-lg">
             Bienvenue chez BARBIN CPS, votre partenaire de confiance en matière
             de chauffage, plomberie et sanitaire depuis 1991. Forts de notre
             expertise, nous sommes fiers de vous offrir des services de qualité,
             alliant rapidité d'intervention et savoir-faire dans l'Oise et le
             Val-d'Oise.
           </p>
-          <p id="text2_about" class="mb-6 text-gray-900 text-lg">
+          <p id="text2_about" class="mb-6 text-base text-gray-900 md:text-lg">
             Notre équipe de professionnels qualifiés met tout en œuvre pour
             répondre à vos besoins en matière de chauffage, plomberie et
             sanitaire, que ce soit pour des installations, des réparations ou
@@ -457,7 +457,10 @@
           >
             Installation et rénovation
           </h6>
-          <p id="block1_text_plomberie" class="text-lg text-gray-900">
+          <p
+            id="block1_text_plomberie"
+            class="text-base text-gray-900 md:text-lg"
+          >
             Faire appel à BARBIN CPS pour l'installation et la rénovation de
             plomberie garantit un travail de qualité, réalisé avec précision et
             selon les normes en vigueur, assurant ainsi la durabilité des
@@ -469,7 +472,10 @@
           >
             Intervention d'urgence et réparation
           </h6>
-          <p id="block2_text_plomberie" class="text-lg text-gray-900">
+          <p
+            id="block2_text_plomberie"
+            class="text-base text-gray-900 md:text-lg"
+          >
             Les interventions d'urgence et des réparations de BARBIN CPS assure
             une réponse rapide et efficace aux problèmes, préservant ainsi
             l'intégrité des installations.

@@ -26,7 +26,7 @@
           Nom du site : www.barbincps.fr
         </p>
         <p class="mb-4 font-light text-gray-900 sm:text-xl">
-          Directrice de publication : Patrick GERMAIN
+          Directeur de publication : Patrick GERMAIN
         </p>
         <p class="mb-4 font-light text-gray-900 sm:text-xl">
           Email : contact@barbincps.fr
