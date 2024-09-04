@@ -871,345 +871,89 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-
 export default {
-  mounted() {
-    // ANIMATION ABOUT
-    var tlAbout = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 80%",
-        scrub: 1,
-        end: () => "+=" + document.querySelector("#about").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlAbout
-      .fromTo(
-        "#title_about",
-        { x: -100, y: -100, duration: 0, opacity: 0, scale: 1.5 },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#text1_about",
-        { x: -100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#text2_about",
-        { x: -100, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image_about",
-        { x: 100, y: 0, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#text3_about",
-        { x: 0, y: 100, duration: 0, opacity: 0 },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      )
-      .fromTo("#cta_about", { opacity: 0 }, { duration: 1, opacity: 1 });
-    // ANIMATION CHAUFFAGE
-    var tlChauffage = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#chauffage",
-        start: "top 90%",
-        scrub: 1,
-        end: () =>
-          "+=" + document.querySelector("#chauffage").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlChauffage
-      .fromTo(
-        "#title_chauffage",
-        {
-          x: -100,
-          y: -100,
-          scale: 1.5,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#bg_chauffage",
-        {
-          x: 0,
-          y: -10,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_logo_chauffage, #block2_logo_chauffage, #block4_logo_chauffage, #block4_logo_chauffage",
-        {
-          x: -10,
-          y: 0,
-          scale: 1.25,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_title_chauffage, #block2_title_chauffage, #block3_title_chauffage, #block4_title_chauffage",
-        {
-          x: -10,
-          y: 0,
-          scale: 1.25,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#image_chauffage",
-        {
-          x: 10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_text_chauffage, #block2_text_chauffage, #block3_text_chauffage, #block4_text_chauffage",
-        {
-          x: -10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      );
-
-    //ANIMATION CERTIFICATION
-    var tlPCertifications = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 90%",
-        scrub: 1,
-        end: () =>
-          "+=" + document.querySelector("#certifications").offsetHeight,
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlPCertifications
-      .fromTo(
-        "#title_certifications",
-        {
-          x: -100,
-          y: -100,
-          scale: 1.5,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#image_certifications",
-        {
-          x: -100,
-          y: 0,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      );
-
-    //ANIMATION PARTENAIRES
-    var tlPartenaires = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#partenaires",
-        start: "top 90%",
-        scrub: 1,
-        end: () => "+=" + document.querySelector("#partenaires").offsetHeight,
-
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlPartenaires
-      .fromTo(
-        "#title_partenaires",
-        {
-          x: -100,
-          y: -100,
-          scale: 1.5,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#image_partenaires",
-        {
-          x: -100,
-          y: 0,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1 }
-      );
-    // ANIMATION PLOMBERIE
-
-    var tlPlomberie = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#plomberie",
-        start: "top 90%",
-        scrub: 1,
-        end: () =>
-          "+=" + document.querySelector("#plomberie").offsetHeight * 0.8,
-
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlPlomberie
-      .fromTo(
-        "#title_plomberie",
-        {
-          x: -100,
-          y: -100,
-          scale: 1.5,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#block1_title_plomberie, #block2_title_plomberie ",
-        {
-          x: -100,
-          y: 0,
-          scale: 1.25,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image1_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image3_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#image2_plomberie",
-        {
-          x: 100,
-          scale: 1.25,
-          opacity: 0,
-        },
-        { x: 0, y: 0, scale: 1, duration: 3, opacity: 1 }
-      )
-      .fromTo(
-        "#block1_text_plomberie, #block2_text_plomberie ",
-        {
-          x: -100,
-          opacity: 0,
-        },
-        { x: 0, duration: 3, opacity: 1 }
-      );
-    // ANIMATION SANITAIRE
-
-    var tlSanitaire = useGsap.timeline({
-      scrollTrigger: {
-        trigger: "#sanitaire",
-        start: "top 90%",
-        scrub: 1,
-        end: () =>
-          "+=" + document.querySelector("#sanitaire").offsetHeight * 0.8,
-        toggleActions: "restart reverse none none",
-      },
-    });
-    tlSanitaire
-      .fromTo(
-        "#title_sanitaire",
-        {
-          x: -100,
-          y: -100,
-          scale: 1.5,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#bg_sanitaire",
-        {
-          x: 0,
-          y: -10,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_logo_sanitaire, #block2_logo_sanitaire, #block4_logo_sanitaire, #block4_logo_sanitaire",
-        {
-          x: -10,
-          y: 0,
-          scale: 1.25,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_title_sanitaire, #block2_title_sanitaire, #block3_title_sanitaire, #block4_title_sanitaire",
-        {
-          x: -10,
-          y: 0,
-          scale: 1.25,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#image_sanitaire",
-        {
-          x: 10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      )
-      .fromTo(
-        "#block1_text_sanitaire, #block2_text_sanitaire, #block3_text_sanitaire, #block4_text_sanitaire",
-        {
-          x: -10,
-          y: 0,
-          scale: 1,
-          duration: 0,
-          opacity: 0,
-        },
-        { x: 0, y: 0, duration: 3, opacity: 1, scale: 1 }
-      );
-  },
-
   methods: {
+    handleResize() {
+      // Réinitialisez les animations en fonction de la nouvelle taille d'écran
+      useGsap.killAll();
+      if (window.innerWidth > 768) {
+        this.initializeAnimations();
+      } else {
+        this.initializeMobileAnimations();
+      }
+    },
+    initializeAnimations() {
+      const sections = [
+        "about",
+        "chauffage",
+        "certifications",
+        "partenaires",
+        "plomberie",
+        "sanitaire",
+      ];
+
+      sections.forEach((section) => {
+        const tl = useGsap.timeline({
+          scrollTrigger: {
+            trigger: `#${section}`,
+            start: "top 80%", // Commence l'animation plus tôt
+            end: "center 50%", // Termine l'animation plus tôt
+            scrub: 0.3, // Réduit le délai pour une animation plus réactive
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        this.animateSection(tl, section);
+      });
+    },
+
+    animateSection(timeline, section) {
+      const elements = {
+        title: `#title_${section}`,
+        text: `#text1_${section}, #text2_${section}, #text3_${section}`,
+        image: `#image_${section}`,
+        blocks: `#block1_${section}, #block2_${section}, #block3_${section}, #block4_${section}`,
+      };
+
+      // Vérifiez si les éléments existent avant d'animer
+      if (document.querySelector(elements.title)) {
+        timeline.fromTo(
+          elements.title,
+          {
+            y: 30,
+            opacity: 0,
+          },
+          { y: 0, opacity: 1, duration: 0.3 }
+        );
+      }
+
+      if (document.querySelector(elements.text)) {
+        timeline.fromTo(
+          elements.text,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.3, stagger: 0.1 },
+          "-=0.2"
+        );
+      }
+
+      if (document.querySelector(elements.image)) {
+        timeline.fromTo(
+          elements.image,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.3 },
+          "-=0.2"
+        );
+      }
+
+      if (document.querySelector(elements.blocks)) {
+        timeline.fromTo(
+          elements.blocks,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.3, stagger: 0.1 },
+          "-=0.2"
+        );
+      }
+    },
     goToAbout() {
       useGsap.to(window, { duration: 0, scrollTo: "#about" });
     },
@@ -1233,7 +977,53 @@ export default {
           this.contactFormTel,
       });
     },
+    // Ajoutez cette méthode pour gérer les animations sur mobile
+    initializeMobileAnimations() {
+      const sections = [
+        "about",
+        "chauffage",
+        "certifications",
+        "partenaires",
+        "plomberie",
+        "sanitaire",
+      ];
+
+      sections.forEach((section) => {
+        useGsap.from(`#${section}`, {
+          opacity: 0,
+          y: 30,
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: `#${section}`,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: 0.2,
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    },
   },
+
+  mounted() {
+    this.$nextTick(() => {
+      // Vérifiez la taille de l'écran pour choisir l'animation appropriée
+      if (window.innerWidth > 768) {
+        this.initializeAnimations();
+      } else {
+        this.initializeMobileAnimations();
+      }
+
+      // Ajoutez un écouteur pour gérer le redimensionnement de la fenêtre
+      window.addEventListener("resize", this.handleResize);
+    });
+  },
+
+  beforeUnmount() {
+    // N'oubliez pas de supprimer l'écouteur lors de la destruction du composant
+    window.removeEventListener("resize", this.handleResize);
+  },
+
   components: {
     Swiper,
     SwiperSlide,

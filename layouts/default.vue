@@ -11,8 +11,8 @@
         <NuxtLink
           to="/"
           @click="goToTop"
-          aria-label="BARBIN C.P.S"
-          title="BARBIN C.P.S"
+          aria-label="BARBIN C.P.S Logo"
+          title="BARBIN C.P.S Logo"
           class="inline-flex items-center cursor-pointer"
         >
           <div
