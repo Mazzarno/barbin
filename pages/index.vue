@@ -919,10 +919,7 @@ export default {
       if (document.querySelector(elements.title)) {
         timeline.fromTo(
           elements.title,
-          {
-            y: 30,
-            opacity: 0,
-          },
+          { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.3 }
         );
       }

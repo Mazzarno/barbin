@@ -19,7 +19,7 @@ nuxtApp.hook("page:finish", () => {
 }); */
 </script>
 <style>
-/* TRANSITION ANIMATION PAGE */
+/* TRANSITION ANIMATION PAGE 
 .page-enter-active,
 .page-leave-active {
   transition: opacity 2s ease;
@@ -27,5 +27,5 @@ nuxtApp.hook("page:finish", () => {
 .page-enter,
 .page-leave-to {
   opacity: 0 2s ease;
-}
+}*/
 </style>

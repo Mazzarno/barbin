@@ -7,22 +7,11 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@hypernym/nuxt-gsap",
-    "nuxt-mail",
     "@nuxt/image",
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-swiper",
   ],
-
-  mail: {
-    message: {
-      to: "postmaster@barbincps.fr",
-    },
-    smtp: {
-      host: "smtp.example.com",
-      port: 587,
-    },
-  },
 
   gsap: {
     composables: true,
@@ -105,6 +94,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "~/public/favicon.ico" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       ],
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
