@@ -16,7 +16,7 @@
           class="inline-flex items-center cursor-pointer"
         >
           <div
-            class="transition delay-100 hover:scale-105 duration-300 h-12 ml-2 sm:h-16 sm:ml-5"
+            class="transition delay-100 hover:scale-105 duration-300 h-10 ml-2 sm:h-16 sm:ml-5"
           >
             <svg
               width="100%"
@@ -493,7 +493,7 @@
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10437.496973778312!2d2.4392452!3d49.1555043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e647e648cf9b73%3A0xeccf53f4212f3c17!2sBarbin!5e0!3m2!1sfr!2sfr!4v1705412942285!5m2!1sfr!2sfr"
               width="100%"
               height="100%"
-              style="border: 0;"
+              style="border: 0"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -507,7 +507,7 @@
         <p class="text-sm text-gray-900">
           © {{ new Date().getFullYear() }} ~ BARBIN C.P.S —
           <a
-            href="https://mazzar.fr"
+            href="https://mazzar.netlify.app/"
             rel="noopener noreferrer"
             class="text-gray-900 ml-1 hover:text-grey-200 hover:underline hover:scale-105 duration-300 hover:animate-pulse"
             target="_blank"
@@ -548,7 +548,7 @@
   </div>
 </template>
 <script>
-import { useGsap } from '#gsap'
+import { useGsap } from "#gsap";
 export default {
   data: () => ({
     showContact: false,
@@ -558,47 +558,47 @@ export default {
     openDrawer: false,
   }),
   mounted() {
-    this.lastScrollPosition = window.pageYOffset
-    window.addEventListener('scroll', this.onScroll)
+    this.lastScrollPosition = window.pageYOffset;
+    window.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
     goToChauffage() {
-      useGsap.to(window, { scrollTo: { y: '#chauffage', offsetY: 128 } })
+      useGsap.to(window, { scrollTo: { y: "#chauffage", offsetY: 128 } });
     },
     goToPlomberie() {
-      useGsap.to(window, { scrollTo: { y: '#plomberie', offsetY: 128 } })
+      useGsap.to(window, { scrollTo: { y: "#plomberie", offsetY: 128 } });
     },
     goToSanitaire() {
-      useGsap.to(window, { scrollTo: { y: '#sanitaire', offsetY: 128 } })
+      useGsap.to(window, { scrollTo: { y: "#sanitaire", offsetY: 128 } });
     },
     goToTop() {
-      useGsap.to(window, { duration: 0, scrollTo: '0' })
+      useGsap.to(window, { duration: 0, scrollTo: "0" });
     },
     drawer() {
-      this.openDrawer = !this.openDrawer
+      this.openDrawer = !this.openDrawer;
     },
     contact() {
-      this.showContact = !this.showContact
+      this.showContact = !this.showContact;
     },
 
     onScroll() {
       if (window.pageYOffset < 0) {
-        return
+        return;
       }
       if (
         Math.abs(window.pageYOffset - this.lastScrollPosition) <
         this.scrollOffset
       ) {
-        return
+        return;
       }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition
-      this.lastScrollPosition = window.pageYOffset
+      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
+      this.lastScrollPosition = window.pageYOffset;
     },
   },
-}
+};
 </script>
 
 <style scoped>

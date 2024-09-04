@@ -873,15 +873,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default {
   methods: {
-    handleResize() {
-      // Réinitialisez les animations en fonction de la nouvelle taille d'écran
-      useGsap.killAll();
-      if (window.innerWidth > 768) {
-        this.initializeAnimations();
-      } else {
-        this.initializeMobileAnimations();
-      }
-    },
     initializeAnimations() {
       const sections = [
         "about",
@@ -1010,15 +1001,7 @@ export default {
       } else {
         this.initializeMobileAnimations();
       }
-
-      // Ajoutez un écouteur pour gérer le redimensionnement de la fenêtre
-      window.addEventListener("resize", this.handleResize);
     });
-  },
-
-  beforeUnmount() {
-    // N'oubliez pas de supprimer l'écouteur lors de la destruction du composant
-    window.removeEventListener("resize", this.handleResize);
   },
 
   components: {
