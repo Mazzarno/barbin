@@ -507,7 +507,7 @@
         <p class="text-sm text-gray-900">
           © {{ new Date().getFullYear() }} ~ BARBIN C.P.S —
           <a
-            href="https://mazzar.netlify.app/"
+            href="https://alexis-germain.fr"
             rel="noopener noreferrer"
             class="text-gray-900 ml-1 hover:text-grey-200 hover:underline hover:scale-105 duration-300 hover:animate-pulse"
             target="_blank"
